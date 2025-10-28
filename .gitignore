@@ -1,0 +1,16 @@
+Samples/
+Exports/
+*.rvt
+*.dwg
+*.pdf
+*.zip
+*.ifc
+*.rfa
+__pycache__/
+.env
+.venv/
+*.pth
+*.pt
+*.onnx
+*.mp4
+*.csv

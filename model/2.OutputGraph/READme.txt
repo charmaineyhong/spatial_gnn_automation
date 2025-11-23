@@ -1,1 +1,0 @@
-Since there so many files generated during the graph generation this folder left empty.

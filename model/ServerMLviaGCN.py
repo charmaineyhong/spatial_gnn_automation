@@ -1,89 +1,98 @@
+import os
+import random
 import torch
 import torch.nn.functional as F
 from torch_geometric.loader import DataLoader
 from torch_geometric.nn import GCNConv
-from torch_geometric.utils import from_networkx 
+from torch_geometric.utils import from_networkx
 from torch.nn import Linear
 import networkx as nx
 import pandas as pd
-import os
-from visualize_graph import plot_training_validation, plot_test_accuracy, plot_confusion_matrix, plot_prediction_distribution, plot_validation_accuracy, plot_lr_schedule, plot_class_accuracies
 import numpy as np
 from torch.optim.lr_scheduler import ReduceLROnPlateau
+from visualize_graph import (
+    plot_training_validation, plot_test_accuracy, plot_confusion_matrix,
+    plot_prediction_distribution, plot_validation_accuracy, plot_lr_schedule,
+    plot_class_accuracies
+)
+
+# sklearn for CV + precision/recall/F1
+from sklearn.metrics import precision_recall_fscore_support
+from sklearn.model_selection import KFold, LeaveOneOut
 
 
-# Set random seed for reproducibility
-torch.manual_seed(100)
-np.random.seed(100)
+# ----------------------------
+# STRONGER REPRODUCIBILITY
+# ----------------------------
+SEED = 100
+torch.manual_seed(SEED)
+np.random.seed(SEED)
+random.seed(SEED)
+
+if torch.cuda.is_available():
+    torch.cuda.manual_seed(SEED)
+    torch.cuda.manual_seed_all(SEED)
+
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+# NOTE: do NOT force torch.use_deterministic_algorithms(True)
+# because it can crash on CUDA (CuBLAS nondeterminism).
+
 
 # 2. GraphML Parsing Function
 def parse_graphml_to_pyg(filepath):
     G = nx.read_graphml(filepath)
-    
-    # Optional: Specify attributes that you know are not useful for features
-    ignore_attributes = {'guid', 'info_string', 'label_guid', 'marker_guid', 'embedded_door_guid', 'embedded_in_wall_guid', 'zone_stamp_guid'}
 
-    # Step 1: Identify all unique attributes across all nodes
+    ignore_attributes = {
+        'guid', 'info_string', 'label_guid', 'marker_guid',
+        'embedded_door_guid', 'embedded_in_wall_guid', 'zone_stamp_guid'
+    }
+
     all_attributes = set()
     for _, node_data in G.nodes(data=True):
         all_attributes.update(node_data.keys())
-    
-    
-    # Ensure that each node has all attributes, setting missing ones to a default value
+
     for _, node_data in G.nodes(data=True):
         for attr in all_attributes:
             if attr in ignore_attributes:
-                # If the attribute is in the ignore list, ensure it is not included in the node features
                 if attr in node_data:
                     del node_data[attr]
             else:
-                # Ensure every node has the attribute, with a default value if missing
-                node_data.setdefault(attr, 0.0 if attr not in ignore_attributes else "none")
-                # Attempt to convert numerical attributes to float
-                if attr not in ignore_attributes:
-                    try:
-                        node_data[attr] = float(node_data[attr])
-                    except ValueError:
-                        node_data[attr] = 0.0  # Default for non-convertible values
+                node_data.setdefault(attr, 0.0)
+                try:
+                    node_data[attr] = float(node_data[attr])
+                except ValueError:
+                    node_data[attr] = 0.0
 
-    # Filter out ignored attributes and convert graph to PyTorch Geometric Data
-    numerical_attributes = [attr for attr in all_attributes if attr not in ignore_attributes and attr != 'label_type']
-    numerical_attributes.sort()  # Sort attributes to ensure consistent order
+    numerical_attributes = [
+        attr for attr in all_attributes
+        if attr not in ignore_attributes and attr != 'label_type'
+    ]
+    numerical_attributes.sort()
 
-    
-    # One-hot encode 'element_type' attribute
     element_types = set(node_data['element_type'] for _, node_data in G.nodes(data=True))
     element_type_dict = {element_type: idx for idx, element_type in enumerate(element_types)}
+
     for _, node_data in G.nodes(data=True):
-        element_type = node_data['element_type']
-        one_hot = [0] * len(element_types)
-        one_hot[element_type_dict[element_type]] = 1
-        # Flatten one-hot encoding to a single numerical value
-        element_type_numerical = one_hot.index(1) if 1 in one_hot else 0
-        node_data['element_type'] = element_type_numerical
+        node_data['element_type'] = element_type_dict[node_data['element_type']]
 
         room_numbers = set(node_data['room_number'] for _, node_data in G.nodes(data=True))
-        room_number_dict = {room_number: idx for idx, room_number in enumerate(room_numbers)}
-        for _, node_data in G.nodes(data=True):
-            room_number = node_data['room_number']
-            one_hot_room_number = [0] * len(room_numbers)
-            one_hot_room_number[room_number_dict[room_number]] = 1
-            room_number_numerical = one_hot_room_number.index(1) if 1 in one_hot_room_number else 0
-            node_data['room_number'] = room_number_numerical
+        room_number_dict = {room: idx for idx, room in enumerate(room_numbers)}
 
         room_names = set(node_data['room_name'] for _, node_data in G.nodes(data=True))
-        room_name_dict = {room_name: idx for idx, room_name in enumerate(room_names)}
-        for _, node_data in G.nodes(data=True):
-            room_name = node_data['room_name']
-            one_hot_room_name = [0] * len(room_names)
-            one_hot_room_name[room_name_dict[room_name]] = 1
-            room_name_numerical = one_hot_room_name.index(1) if 1 in one_hot_room_name else 0
-            node_data['room_name'] = room_name_numerical
+        room_name_dict = {room: idx for idx, room in enumerate(room_names)}
 
-    # Concatenate numerical attributes with 'element_type, room_number, room_name'
-    node_features = [[node_data.get(attr, 0.0) for attr in numerical_attributes] + [node_data['element_type']]+[node_data['room_number']]+[node_data['room_name']] for _, node_data in G.nodes(data=True)]
+        node_data['room_number'] = room_number_dict[node_data['room_number']]
+        node_data['room_name'] = room_name_dict[node_data['room_name']]
+
+    node_features = [
+        [node_data.get(attr, 0.0) for attr in numerical_attributes] +
+        [node_data['element_type'], node_data['room_number'], node_data['room_name']]
+        for _, node_data in G.nodes(data=True)
+    ]
+
     labels = [node_data['label_type'] for _, node_data in G.nodes(data=True) if 'label_type' in node_data]
-   
+
     features_tensor = torch.tensor(node_features, dtype=torch.float)
     labels_tensor = torch.tensor(labels, dtype=torch.long)
 
@@ -92,6 +101,7 @@ def parse_graphml_to_pyg(filepath):
     data.y = labels_tensor
 
     return data
+
 
 # 3. Model Definitions
 class GCNModel(torch.nn.Module):
@@ -102,11 +112,12 @@ class GCNModel(torch.nn.Module):
 
     def forward(self, x, edge_index):
         x = F.relu(self.conv1(x, edge_index))
-        x = F.dropout(x, p=0.5, training=self.training)  # Dropout layer added
+        x = F.dropout(x, p=0.5, training=self.training)
         x = self.conv2(x, edge_index)
         return x
 
-# 4. Training and Evaluation Functions
+
+# 4. Training / Eval Functions
 def train(model, optimizer, criterion, train_loader, device):
     model.train()
     total_loss = 0
@@ -116,16 +127,19 @@ def train(model, optimizer, criterion, train_loader, device):
         optimizer.zero_grad()
         out = model(data.x, data.edge_index)
         loss = criterion(out, data.y)
-        # Add L2 regularization (weight decay)
+
         l2_reg = torch.tensor(0.).to(device)
         for param in model.parameters():
             l2_reg += torch.norm(param)
-        loss += 0.001 * l2_reg  # Hyperparameter lambda = 0.001
+        loss += 0.001 * l2_reg
+
         loss.backward()
         optimizer.step()
+
         total_loss += loss.item() * data.y.size(0)
         total_samples += data.y.size(0)
     return total_loss / total_samples
+
 
 def evaluate(model, criterion, loader, device):
     model.eval()
@@ -136,238 +150,245 @@ def evaluate(model, criterion, loader, device):
         for data in loader:
             data = data.to(device)
             out = model(data.x, data.edge_index)
-            pred = out.argmax(dim=1)  # Predicted labels
+            pred = out.argmax(dim=1)
             total_correct += (pred == data.y).sum().item()
-            total_samples += data.y.size(0)  # Add the number of nodes in this batch to the total
+            total_samples += data.y.size(0)
             loss = criterion(out, data.y)
             total_loss += loss.item() * data.y.size(0)
-    accuracy = total_correct / total_samples  # Calculate the accuracy
+    accuracy = total_correct / total_samples
     avg_loss = total_loss / total_samples
     return accuracy, avg_loss
 
 
-
-# 6. Main Execution Block
+# ---------------------------
+# MAIN
+# ---------------------------
 if __name__ == "__main__":
-    # Load and preprocess the data
-    
-     # Specify the directory where your input files are located
-    input_directory_1 = r'C:\Users\serve\OneDrive\Desktop\Python\3.InputML\2.Sample Projects by floor'
-    input_directory_2 = r'C:\Users\serve\OneDrive\Desktop\Python\3.InputML\3.Server Sample Projects'
-    test_data_directory = r'C:\Users\serve\OneDrive\Desktop\Python\3.InputML\4.Test data'
-    validation_data_directory = r'C:\Users\serve\OneDrive\Desktop\Python\3.InputML\5.Validation data'
 
-    #C:\Users\serve\OneDrive\Desktop\Python\3.InputML\1.Sample Projects
-    #C:\Users\serve\OneDrive\Desktop\Python\3.InputML\2.Sample Projects by floor
-    #C:\Users\serve\OneDrive\Desktop\Python\3.InputML\3.Server Sample Projects
-    # Get a list of all files in the input directory
-    file_paths_1 = [os.path.join(input_directory_1, file) for file in os.listdir(input_directory_1) if file.endswith('.graphml')]
-    file_paths_2 = [os.path.join(input_directory_2, file) for file in os.listdir(input_directory_2) if file.endswith('.graphml')]
-    test_file_paths = [os.path.join(test_data_directory, file) for file in os.listdir(test_data_directory) if file.endswith('.graphml')]
-    validation_file_paths = [os.path.join(validation_data_directory, file) for file in os.listdir(validation_data_directory) if file.endswith('.graphml')]
+    # ONE combined directory
+    input_dir = "/mnt/UbuntuSSD/Spatial GNN/model/3.InputML"
 
-    # Split data into training, validation, and testing sets
+    all_file_paths = sorted([
+        os.path.join(input_dir, f)
+        for f in os.listdir(input_dir)
+        if f.endswith(".graphml")
+    ])
 
-    file_paths = file_paths_1 + file_paths_2
-        # Load graphs
-    all_data = [parse_graphml_to_pyg(filepath) for filepath in file_paths]
-    test_data = [parse_graphml_to_pyg(filepath) for filepath in test_file_paths]
-    validation_data = [parse_graphml_to_pyg(filepath) for filepath in validation_file_paths]
-    print("Loading the following test files:")
-    for file_path in test_file_paths:
-        file_name = os.path.basename(file_path)  # Extracts the file name from the full path
-        print(file_name)
+    if len(all_file_paths) < 2:
+        raise ValueError("Need at least 2 graphml files for cross validation.")
 
-    print("Loading the following validation files:")
-    for file_path in validation_file_paths:
-        file_name = os.path.basename(file_path)  # Extracts the file name from the full path
-        print(file_name)
-   
-    # Define the number of files
-    num_graphs = len(all_data)
+    print("ALL graphs:", all_file_paths)
 
-    # Define the percentage of data for each split
-    
+    # Output folder
+    output_folder = "/mnt/UbuntuSSD/Spatial GNN/model/4.OutputML_GCN"
+    os.makedirs(output_folder, exist_ok=True)
 
-    # Create shuffled indices
-    indices = np.random.permutation(num_graphs)
+    # Decide CV mode
+    if len(all_file_paths) >= 5:
+        splitter = KFold(n_splits=5, shuffle=True, random_state=SEED)
+        cv_name = "5-fold"
+    else:
+        splitter = LeaveOneOut()
+        cv_name = "leave-one-out"
 
-    # Calculate the number of graphs for each split
-    
-    num_train = num_graphs
+    print(f"\n✅ Using {cv_name} cross validation with SEED={SEED}\n")
 
-    # Split indices into training, validation, and testing sets
-    # Generate shuffled indices and split them
-    indices = np.random.permutation(num_graphs)
-    train_indices = indices[:num_train]
-    
-    # Create DataLoader for the entire dataset
-    all_loader = DataLoader(all_data, batch_size=16, shuffle=True)
+    # Load ALL graphs once
+    all_data = [parse_graphml_to_pyg(fp) for fp in all_file_paths]
 
-    # Create DataLoader for training, validation, and testing sets
-    train_loader = DataLoader([all_data[i] for i in train_indices], batch_size=16, shuffle=True)
-    val_loader = DataLoader(validation_data, batch_size=16, shuffle=False)
-    test_loader = DataLoader(test_data, batch_size=16, shuffle=False)
+    # Dimensions from first graph
+    input_dim = all_data[0].x.shape[1]
+    output_dim = 5
 
-    print("Files used for training:")
-    for i in train_indices:
-        file_name = os.path.basename(file_paths[i])  # Extract the file name from the full path
-        print(file_name)
-    
-    # Determine input and output dimensions based on your data
-    input_dim = len(all_data[0].x[0])  # Assuming the input features have the same dimension for all nodes
-    output_dim = 5  # 5 different label types
+    label_names = ['No Label', 'Wall with Dimension', 'Connected Label', 'Door Marker', 'Zone Stamp']
 
-    # Calculate class weights based on the frequency of each class in the training data
-    class_weights = []
-    for label_type in range(output_dim):
-        class_count = sum([(data.y == label_type).any().item() for data in train_loader.dataset])
-        if class_count == 0:
-            class_weight = 0  # Assign a default value or handle the case accordingly
-        else:
-            class_weight = len(train_loader.dataset) / (output_dim * class_count)
-        class_weights.append(class_weight)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print("🔥 Using device:", device)
 
+    fold_accuracies = []
+    fold_losses = []
 
-    # Initialize model, optimizer, and criterion
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    model = GCNModel(input_dim=input_dim, hidden_dim=256, output_dim=output_dim).to(device)
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
-    criterion = torch.nn.CrossEntropyLoss(weight=torch.tensor(class_weights, dtype=torch.float))
-    
-    # After initializing your optimizer
-    scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=30, verbose=True)
+    all_y_true = []
+    all_y_pred = []
 
+    best_fold_acc = -1
+    best_fold_state = None
 
-    # Training loop
-    train_losses = []
-    val_losses = []
-    val_accuracies = []
-    final_epoch = 0
-    learning_rates = [] 
-    for epoch in range(1, 750):
-        # Train
-        model.train()
-        epoch_train_loss = 0  # Variable to accumulate loss for the current epoch
-        num_batches = 0  # Variable to count the number of batches processed in the current epoch
-        for iteration, data in enumerate(train_loader, 1):
-            data = data.to(device)
-            optimizer.zero_grad()
-            out = model(data.x, data.edge_index)
-            loss = criterion(out, data.y)  
-            loss.backward()
-            optimizer.step()
-            epoch_train_loss += loss.item() * data.num_graphs  # Update total loss
-            num_batches += 1
-        
-        # Calculate the average training loss for the current epoch
-        avg_epoch_train_loss  = epoch_train_loss  / len(train_loader.dataset)  # Divide by total number of graphs
-        train_losses.append(avg_epoch_train_loss)  # Append the average loss to the list
+    for fold, (train_idx, test_idx) in enumerate(splitter.split(all_data), start=1):
+        print(f"\n================ FOLD {fold} ================")
 
-        
-         # Validate
-        val_accuracy, epoch_val_loss = evaluate(model, criterion, val_loader, device)
-        val_accuracies.append(val_accuracy)  # Append validation accuracy to the list
-        val_losses.append(epoch_val_loss)
+        fold_dir = os.path.join(output_folder, f"fold_{fold}")
+        os.makedirs(fold_dir, exist_ok=True)
 
-        # Update learning rate scheduler at the end of each epoch
-        scheduler.step(epoch_val_loss)
-        
-        learning_rates.append(optimizer.param_groups[0]['lr'])
+        train_data = [all_data[i] for i in train_idx]
+        test_data = [all_data[i] for i in test_idx]
 
-        # Early stopping condition if necessary
-        if scheduler.num_bad_epochs > scheduler.patience:
-            print("Early stopping triggered.")
-            break
+        train_loader = DataLoader(train_data, batch_size=1, shuffle=True)
+        test_loader = DataLoader(test_data, batch_size=1, shuffle=False)
 
-        # Print training loss and validation accuracy for each epoch
-        print(f"Epoch {epoch}, Average Training Loss: {avg_epoch_train_loss}, Validation Accuracy: {val_accuracy}, Validation Loss: {epoch_val_loss}")
-        output_folder = r'C:\Users\serve\OneDrive\Desktop\Python\4.OutputML_GCN'
-        
-        final_epoch = epoch
+        # Class weights from TRAIN only
+        all_train_labels = torch.cat([d.y for d in train_data], dim=0)
+        class_counts = torch.bincount(all_train_labels, minlength=output_dim).float()
+        class_weights = (class_counts.sum() / (output_dim * class_counts)).clamp(max=10.0)
 
-        training_validation_plot_path = os.path.join(output_folder, 'training_validation_plot.png')
-        plot_training_validation(train_losses, val_losses, training_validation_plot_path,  title="Training and Validation Metrics for GCN Model")
+        model = GCNModel(input_dim=input_dim, hidden_dim=128, output_dim=output_dim).to(device)
+        optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+        criterion = torch.nn.CrossEntropyLoss(weight=class_weights.to(device))
+        scheduler = ReduceLROnPlateau(optimizer, mode="min", factor=0.1, patience=30)
 
-        validation_accuracy_plot_path = os.path.join(output_folder, 'validation_accuracy_plot.png')
-        plot_validation_accuracy(val_accuracies, validation_accuracy_plot_path, title="Validation Accuracy for GCN Model")
+        train_losses, test_losses, test_accuracies, lrs = [], [], [], []
 
-        lr_schedule_plot_path = os.path.join(output_folder, 'learning_rate_schedule.png')
-        plot_lr_schedule(learning_rates, lr_schedule_plot_path, title="Learning Rate Schedule for GCN Model")
-    # Test
-    test_accuracy = evaluate(model, criterion, test_loader, device)
-    test_accuracy_value = test_accuracy[0]
-    print(f"Final Test Accuracy: {test_accuracy_value}")
-    
-    # After training, make predictions on the testing set and save the predicted labels to CSV files
-    output_folder = r'C:\Users\serve\OneDrive\Desktop\Python\4.OutputML_GCN'
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
+        # --------------------
+        # Training
+        # --------------------
+        for epoch in range(1, 751):
+            tr_loss = train(model, optimizer, criterion, train_loader, device)
+            train_losses.append(tr_loss)
 
-       
-    # Loop through test files and process predictions
-    for file_path, test_graph in zip(test_file_paths, test_data):
-        # Retrieve the index of the test graph
-        file_idx = int(os.path.basename(file_path).split('_')[2].split('.')[0])
+            te_acc, te_loss = evaluate(model, criterion, test_loader, device)
+            test_accuracies.append(te_acc)
+            test_losses.append(te_loss)
 
-        # Prepare DataLoader for the current test graph
-        test_loader_single = DataLoader([test_graph], batch_size=16, shuffle=False)
+            scheduler.step(te_loss)
+            lrs.append(optimizer.param_groups[0]["lr"])
 
-        # Process predictions for the current test graph
-        for i, data in enumerate(test_loader_single):
-            # Retrieve the index of the test graph in all_data
-            model.eval()  # Set the model to evaluation mode
-            with torch.no_grad():  # Disable gradient computation during inference
-                data = data.to(device)  # Transfer data to the appropriate device (GPU or CPU)
-                logits = model(data.x, data.edge_index)  # Use the trained model to generate logits
-            predictions = logits.argmax(dim=1).cpu().numpy()
+            print(
+                f"Fold {fold} | Epoch {epoch:03d} "
+                f"TrainLoss={tr_loss:.4f} TestAcc={te_acc:.4f} TestLoss={te_loss:.4f} "
+                f"LR={lrs[-1]:.3g}"
+            )
 
-            # Extract node IDs and graph indices for each node
-            label_types = data.y.cpu().numpy()  # label types are stored in 'y' attribute
-            graph_indices = data.batch.cpu().numpy()  # batch attribute contains the graph indices for each node
+            # Plots per epoch (same as your flow)
+            plot_training_validation(train_losses, test_losses, os.path.join(fold_dir, "training_validation_plot.png"))
+            plot_validation_accuracy(test_accuracies, os.path.join(fold_dir, "validation_accuracy_plot.png"))
+            plot_lr_schedule(lrs, os.path.join(fold_dir, "learning_rate_schedule.png"))
 
-            # Save predictions to CSV file for the current test graph
-            predictions_output_path = os.path.join(output_folder, f'predictions_output_graph_{file_idx}.csv')
-            predictions_df = pd.DataFrame({'label_type': label_types, 'predicted_label': predictions})
-            predictions_df.to_csv(predictions_output_path, index=False)
+        # Final fold test accuracy
+        final_acc = test_accuracies[-1]
+        final_loss = test_losses[-1]
+        fold_accuracies.append(final_acc)
+        fold_losses.append(final_loss)
 
-            # Generate prediction distribution plot for the current test graph
-            prediction_distribution_output_path = os.path.join(output_folder, f'prediction_distribution_graph_{file_idx}.png')
-            plot_prediction_distribution(predictions, label_types, prediction_distribution_output_path, title=f'Prediction Distribution of Label Types for GCN Model')
-                        # Plot and save test accuracy
-            test_accuracy_plot_path = os.path.join(output_folder, 'test_accuracy_plot.png')
-            plot_test_accuracy(test_accuracy_value , final_epoch, test_accuracy_plot_path, title="Final Test Accuracy for GCN Model")
+        print(f"\n✅ Fold {fold} Final Test Accuracy: {final_acc:.4f}")
 
+        # Save best fold model
+        if final_acc > best_fold_acc:
+            best_fold_acc = final_acc
+            best_fold_state = model.state_dict()
 
-            # Calculate and plot confusion matrix
-            y_true = []
-            y_pred = []
+        # Collect predictions for overall metrics
+        y_true_fold, y_pred_fold = [], []
+        with torch.no_grad():
+            for data in test_loader:
+                data = data.to(device)
+                out = model(data.x, data.edge_index)
+                pred = out.argmax(dim=1).cpu().numpy()
+                y_pred_fold.extend(pred)
+                y_true_fold.extend(data.y.cpu().numpy())
 
-            with torch.no_grad():
-                for data in test_loader:
-                    data = data.to(device)
-                    out = model(data.x, data.edge_index)
-                    pred = out.argmax(dim=1)
-                    y_true.extend(data.y.cpu().numpy())  
-                    y_pred.extend(pred.cpu().numpy())  
+        all_y_true.extend(y_true_fold)
+        all_y_pred.extend(y_pred_fold)
 
-            # Convert true and predicted labels to numpy arrays
-            y_true = np.array(y_true)
-            y_pred = np.array(y_pred)
+        # Per-fold confusion matrix
+        plot_confusion_matrix(
+            np.array(y_true_fold), np.array(y_pred_fold), label_names,
+            os.path.join(fold_dir, "confusion_matrix.png")
+        )
 
-            # Define label names if available
-            label_names = ['No Label', 'Wall with Dimension', 'Connected Label', 'Door Marker', 'Zone Stamp']  
+        plot_class_accuracies(
+            np.array(y_true_fold), np.array(y_pred_fold), label_names,
+            os.path.join(fold_dir, "class_accuracies_histogram_GCN.png")
+        )
 
+    # ============================
+    # OVERALL CV SUMMARY
+    # ============================
+    fold_accuracies = np.array(fold_accuracies)
+    fold_losses = np.array(fold_losses)
 
-            # Plot confusion matrix
-            confusion_matrix_plot_path = os.path.join(output_folder, 'confusion_matrix.png')
-            plot_confusion_matrix(y_true, y_pred, ['No Label', 'Wall with Dimension', 'Connected Label', 'Door Marker', 'Zone Stamp'], confusion_matrix_plot_path, title="Confusion Matrix for GCN Model")
+    print("\n================ CV SUMMARY ================")
+    for i, acc in enumerate(fold_accuracies, start=1):
+        print(f"Fold {i}: Acc={acc:.4f}")
 
-                    # Calculate and save class accuracies
-            accuracy_histogram_path = os.path.join(output_folder, 'class_accuracies_histogram_GCN.png')
-            plot_class_accuracies(y_true, y_pred, label_names, accuracy_histogram_path, title="Per-Class Accuracies for GCN Model")
+    print("-------------------------------------------")
+    print(f"Mean Accuracy: {fold_accuracies.mean():.4f}")
+    print(f"Std  Accuracy: {fold_accuracies.std():.4f}")
+    print("===========================================\n")
 
-# Copyright statement:
-# The code produced herein is part of the master thesis conducted at the Technical University of Munich and should be used with proper citation.
-# All rights reserved.
-# Happy coding! by Server Çeter 
+    # ============================
+    # SAVE BEST FOLD MODEL
+    # ============================
+    best_model = GCNModel(input_dim=input_dim, hidden_dim=128, output_dim=output_dim).to(device)
+    best_model.load_state_dict(best_fold_state)
+
+    pth_path = os.path.join(output_folder, "trained_model.pth")
+    torch.save({
+        "model_state_dict": best_model.state_dict(),
+        "input_dim": input_dim,
+        "output_dim": output_dim,
+        "hidden_dim": 128,
+        "best_fold_acc": best_fold_acc,
+        "cv_mean_acc": fold_accuracies.mean(),
+        "cv_std_acc": fold_accuracies.std(),
+        "seed": SEED,
+        "cv_mode": cv_name,
+    }, pth_path)
+    print("✅ Saved BEST PyTorch weights to:", pth_path)
+
+    onnx_path = os.path.join(output_folder, "trained_model.onnx")
+    dummy_x = torch.randn(1, input_dim).to(device)
+    dummy_edge = torch.tensor([[0], [0]], dtype=torch.long).to(device)
+
+    torch.onnx.export(
+        best_model,
+        (dummy_x, dummy_edge),
+        onnx_path,
+        input_names=["x", "edge_index"],
+        output_names=["logits"],
+        opset_version=16,
+        dynamic_axes={
+            "x": {0: "num_nodes"},
+            "edge_index": {1: "num_edges"},
+            "logits": {0: "num_nodes"}
+        }
+    )
+    print("✅ Saved BEST ONNX model to:", onnx_path)
+
+    # ============================
+    # OVERALL METRICS (ALL FOLDS)
+    # ============================
+    all_y_true = np.array(all_y_true)
+    all_y_pred = np.array(all_y_pred)
+
+    precision, recall, f1, _ = precision_recall_fscore_support(
+        all_y_true, all_y_pred, labels=range(output_dim), zero_division=0
+    )
+
+    metrics_df = pd.DataFrame({
+        "Class": label_names,
+        "Precision": precision,
+        "Recall": recall,
+        "F1-Score": f1
+    })
+
+    metrics_csv_path = os.path.join(output_folder, "per_class_metrics.csv")
+    metrics_df.to_csv(metrics_csv_path, index=False)
+    print("📊 Saved overall per-class precision/recall/F1 to:", metrics_csv_path)
+
+    print("\n===== OVERALL PER-CLASS PRECISION / RECALL / F1 =====")
+    print(metrics_df)
+    print("=====================================================\n")
+    print("Macro F1:", f1.mean())
+    print("Weighted F1:", np.average(f1, weights=np.bincount(all_y_true)))
+    print()
+
+    # Overall confusion matrix
+    plot_confusion_matrix(
+        all_y_true, all_y_pred, label_names,
+        os.path.join(output_folder, "confusion_matrix.png")
+    )
+
+    plot_class_accuracies(
+        all_y_true, all_y_pred, label_names,
+        os.path.join(output_folder, "class_accuracies_histogram_GCN.png")
+    )

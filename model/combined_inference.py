@@ -1,26 +1,24 @@
 #!/usr/bin/env python3
 """
-Combined Inference: Dimension + Text Annotations
+Combined Inference: Independent Dimension + Text Predictions
 
-For each element/node in a GraphML file, predicts:
-  [need_dimension, need_text]
+Both models run independently to predict annotation needs:
+  - Dimension model: Predicts if element needs dimension annotations
+  - Text model: Predicts if element needs text annotations
 
-Where:
-  - need_dimension: 1 if needs DIMENSION annotation, else 0
-  - need_text: 1 if needs TEXT annotation (room label, structural notes, etc.), else 0
-
-Examples:
+Final outputs:
   [0, 0] → No annotation needed
   [1, 0] → Dimension only
   [0, 1] → Text only
-  [1, 1] → Both (should be rare/impossible in current setup)
+  [1, 1] → Both dimension AND text needed
+
+Note: Text model was trained on elements WITHOUT dimensions, so predictions for
+elements with dimensions may be less reliable. However, this approach allows
+capturing elements that need both types of annotations.
 
 Models used:
   - Dimension model: ./5.OutputML_GAT_DIM/trained_model.pth
-  - Text model: ./5.OutputML_GAT_TEXT_HAS_HEURISTIC copy/trained_model_text_has_heuristic.pth
-
-Usage:
-  python3 combined_inference.py --input <graphml_file> --output <csv_output>
+  - Text model: ./5.OutputML_GAT_TEXT/trained_model_text.pth
 """
 
 import os
@@ -116,8 +114,6 @@ def parse_graphml_to_pyg(graphml_path):
     """
     Parse GraphML file and extract node features + edges.
     Returns PyG Data object (without labels).
-    
-    IMPORTANT: Must match the exact feature extraction used during training!
     """
     G = nx.read_graphml(graphml_path)
     
@@ -188,6 +184,129 @@ def parse_graphml_to_pyg(graphml_path):
 
 
 # ----------------------------
+# CSV Parsing for Revit-exported nodes/edges
+# ----------------------------
+
+def parse_csv_to_pyg(nodes_csv, edges_csv):
+
+    df_nodes = pd.read_csv(nodes_csv)
+    df_edges = pd.read_csv(edges_csv)
+
+    # Revit element Ids
+    node_ids = df_nodes["id"].astype(int).tolist()
+    id_to_idx = {nid: i for i, nid in enumerate(node_ids)}
+
+    node_features = []
+
+    material_encoding = {"concrete": 1, "steel": 2, "wood": 3, "glass": 4, "unknown": 0}
+    type_encoding = {"wall": 1, "column": 2, "beam": 3, "slab": 4, "unknown": 0}
+
+    for _, row in df_nodes.iterrows():
+        # Basic geometry from NodeRecord CSV
+        cx = float(row.get("cx", 0.0))
+        cy = float(row.get("cy", 0.0))
+        zmin = float(row.get("min_z", 0.0))
+
+        min_x = float(row.get("min_x", 0.0))
+        max_x = float(row.get("max_x", 0.0))
+        min_y = float(row.get("min_y", 0.0))
+        max_y = float(row.get("max_y", 0.0))
+        min_z = float(row.get("min_z", 0.0))
+        max_z = float(row.get("max_z", 0.0))
+
+        w = max_x - min_x
+        h = max_y - min_y
+        d = max_z - min_z
+
+        # Fallbacks to avoid 0 dimensions
+        if w <= 0: w = 1e-3
+        if h <= 0: h = 1e-3
+        if d <= 0: d = 1e-3
+
+        x = cx
+        y = cy
+        z = zmin
+
+        feats = [x, y, z, w, h, d]
+
+        # Volume & surface area
+        volume = w * h * d
+        surface_area = 2 * (w * h + h * d + w * d)
+        feats.extend([volume, surface_area])
+
+        # Ratios
+        feats.extend([
+            w / h if h else 0.0,
+            h / d if d else 0.0,
+            w / d if d else 0.0
+        ])
+
+        # Infer material from family/type strings (very rough)
+        family = str(row.get("family", "")).lower()
+        type_name = str(row.get("type", "")).lower()
+        material = "unknown"
+        for key in ["concrete", "steel", "wood", "glass"]:
+            if key in family or key in type_name:
+                material = key
+                break
+
+        # Infer element type from category/type
+        category = str(row.get("category", "")).lower()
+        etype = "unknown"
+        if "wall" in category:
+            etype = "wall"
+        elif "floor" in category or "slab" in category:
+            etype = "slab"
+        elif "structural framing" in category or "beam" in type_name:
+            etype = "beam"
+        elif "column" in category:
+            etype = "column"
+
+        feats.extend([
+            material_encoding.get(material, 0),
+            type_encoding.get(etype, 0),
+        ])
+
+        # Position again
+        feats.extend([x, y, z])
+
+        node_features.append(feats)
+
+    # Edges (undirected) from src,dst columns
+    edge_list = []
+    for _, erow in df_edges.iterrows():
+        try:
+            src_id = int(erow["src"])
+            dst_id = int(erow["dst"])
+        except Exception:
+            continue
+
+        if src_id in id_to_idx and dst_id in id_to_idx:
+            si = id_to_idx[src_id]
+            di = id_to_idx[dst_id]
+            edge_list.append([si, di])
+            edge_list.append([di, si])
+
+    if not edge_list:
+        print(f"Warning: No edges in {nodes_csv}/{edges_csv}")
+        edge_index = torch.zeros((2, 0), dtype=torch.long)
+    else:
+        edge_index = torch.tensor(edge_list, dtype=torch.long).t().contiguous()
+
+    x_tensor = torch.tensor(node_features, dtype=torch.float)
+
+    print(
+        f"  [CSV] Extracted {len(node_features)} nodes with "
+        f"{len(node_features[0]) if node_features else 0} features"
+    )
+
+    data = Data(x=x_tensor, edge_index=edge_index)
+    data.node_ids = node_ids
+    return data
+
+
+
+# ----------------------------
 # Inference
 # ----------------------------
 
@@ -229,17 +348,20 @@ def load_models(dim_model_path, text_model_path, input_dim, device):
 
 
 def predict_combined(dim_model, text_model, data, device, 
-                     dim_threshold=0.5, text_threshold=0.65):
+                     dim_threshold=0.5, text_threshold=0.5):
     """
-    Run inference with both models.
+    Run INDEPENDENT inference:
+    1. Run dimension model - predicts if element needs dimensions
+    2. Run text model - predicts if element needs text annotations
+    3. Both predictions are independent and can both be true
     
     Args:
         dim_model: Dimension prediction model
         text_model: Text prediction model
         data: PyG Data object
         device: torch device
-        dim_threshold: Threshold for dimension prediction (default 0.5)
-        text_threshold: Threshold for text prediction (default 0.65)
+        dim_threshold: Threshold for dimension prediction
+        text_threshold: Threshold for text prediction
     
     Returns:
         predictions: np.array of shape (num_nodes, 2) with [need_dim, need_text]
@@ -296,7 +418,7 @@ def save_predictions(node_ids, predictions, probabilities, output_path):
     print(f"No annotation: {(df['annotation_type'] == 'none').sum()}")
     print(f"Dimension only: {(df['annotation_type'] == 'dimension_only').sum()}")
     print(f"Text only: {(df['annotation_type'] == 'text_only').sum()}")
-    print(f"Both: {(df['annotation_type'] == 'both').sum()}")
+    print(f"Both: {(df['annotation_type'] == 'both').sum()} (should be 0 in cascaded mode)")
     
     return df
 
@@ -306,19 +428,19 @@ def save_predictions(node_ids, predictions, probabilities, output_path):
 # ----------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description='Combined Dimension + Text inference')
+    parser = argparse.ArgumentParser(description='Combined Dimension + Text inference (cascaded)')
     parser.add_argument('--input', required=True, help='Path to input GraphML file')
     parser.add_argument('--output', default='combined_predictions.csv', 
                        help='Output CSV file path')
     parser.add_argument('--dim_model', default='./5.OutputML_GAT_DIM/trained_model.pth',
                        help='Path to dimension model')
-    parser.add_argument('--text_model', 
-                       default='./5.OutputML_GAT_TEXT/trained_model_text.pth',
-                       help='Path to text model')
-    parser.add_argument('--dim_threshold', type=float, default=0.4,
-                       help='Threshold for dimension prediction')
-    parser.add_argument('--text_threshold', type=float, default=0.35,
-                       help='Threshold for text prediction')
+    # Print summary
+    print("\n=== Prediction Summary ===")
+    print(f"Total nodes: {len(node_ids)}")
+    print(f"No annotation: {(df['annotation_type'] == 'none').sum()}")
+    print(f"Dimension only: {(df['annotation_type'] == 'dimension_only').sum()}")
+    print(f"Text only: {(df['annotation_type'] == 'text_only').sum()}")
+    print(f"Both: {(df['annotation_type'] == 'both').sum()}")
     parser.add_argument('--device', default='cuda' if torch.cuda.is_available() else 'cpu',
                        help='Device to use (cuda/cpu)')
     
@@ -329,10 +451,7 @@ def main():
         raise FileNotFoundError(f"Input file not found: {args.input}")
     if not os.path.exists(args.dim_model):
         raise FileNotFoundError(f"Dimension model not found: {args.dim_model}")
-    if not os.path.exists(args.text_model):
-        raise FileNotFoundError(f"Text model not found: {args.text_model}")
-    
-    print(f"=== Combined Inference ===")
+    print(f"=== Combined Inference (Independent Models) ===")
     print(f"Input: {args.input}")
     print(f"Dimension model: {args.dim_model}")
     print(f"Text model: {args.text_model}")

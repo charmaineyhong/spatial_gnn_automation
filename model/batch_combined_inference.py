@@ -28,9 +28,9 @@ def main():
     parser.add_argument('--text_model', 
                        default='./5.OutputML_GAT_TEXT/trained_model_text.pth',
                        help='Path to text model')
-    parser.add_argument('--dim_threshold', type=float, default=0.4,
+    parser.add_argument('--dim_threshold', type=float, default=0.7,
                        help='Threshold for dimension prediction')
-    parser.add_argument('--text_threshold', type=float, default=0.35,
+    parser.add_argument('--text_threshold', type=float, default=0.4,
                        help='Threshold for text prediction')
     parser.add_argument('--device', default='cuda' if torch.cuda.is_available() else 'cpu',
                        help='Device to use (cuda/cpu)')

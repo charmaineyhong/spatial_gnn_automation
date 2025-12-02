@@ -1,0 +1,438 @@
+annotation_id,view_name,view_type,category,annotation_type,value,x,y,extra,target_element_ids
+1,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446422|11709508|9223410
+2,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446422|2446354|9223410
+3,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11748005|9223210
+4,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11748005|9223408
+5,Elevation A,Elevation,Dimensions,Linear Dimension Style,51.02,0.0,0.0,Linear Dimension Style,11749458|11749460
+6,Elevation A,Elevation,Dimensions,Linear Dimension Style,46.96,0.0,0.0,Linear Dimension Style,11749458|11749460
+7,Elevation A,Elevation,Dimensions,Linear Dimension Style,69.63,0.0,0.0,Linear Dimension Style,11749459|11749460
+8,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11709508|2446354|9223410|9223410
+9,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11749848|9223410
+10,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11749848|9223410
+11,Elevation A,Elevation,Dimensions,Linear Dimension Style,51.02,0.0,0.0,Linear Dimension Style,11751862|11751864
+12,Elevation A,Elevation,Dimensions,Linear Dimension Style,46.96,0.0,0.0,Linear Dimension Style,11751862|11751864
+13,Elevation A,Elevation,Dimensions,Linear Dimension Style,69.63,0.0,0.0,Linear Dimension Style,11751863|11751864
+14,Elevation B,Elevation,Dimensions,Linear Dimension Style,51.02,0.0,0.0,Linear Dimension Style,11752270|11752268
+15,Elevation B,Elevation,Dimensions,Linear Dimension Style,46.96,0.0,0.0,Linear Dimension Style,11752270|11752268
+16,Elevation B,Elevation,Dimensions,Linear Dimension Style,69.63,0.0,0.0,Linear Dimension Style,11752269|11752270
+17,Elevation B,Elevation,Dimensions,Linear Dimension Style,51.02,0.0,0.0,Linear Dimension Style,11752281|11752279
+18,Elevation B,Elevation,Dimensions,Linear Dimension Style,46.96,0.0,0.0,Linear Dimension Style,11752281|11752279
+19,Elevation B,Elevation,Dimensions,Linear Dimension Style,69.63,0.0,0.0,Linear Dimension Style,11752280|11752281
+20,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11823181|2446354|2446422
+21,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11823181|10251234|2446422
+22,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11823181|11823115|2446354|10251234|10251234
+23,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,2830.00,0.0,0.0,WH_Arial_2.5mm_Transparent,11710450|11709508
+24,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,9223412|11749848|11748005|9223410
+25,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11754354|9223281
+26,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11754396|9223410
+27,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11754396|9223410
+28,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446422|11710450|9223412
+29,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11759345|9223410
+30,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11759345|9223410
+31,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11759345|9223410
+32,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446422|2446354|11823179
+33,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446422|10251234|11709508
+34,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11709508|11979212|9267567|2446354|9223410|9223410
+35,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11709508|11910307|2446354|10251234|10251234
+36,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11709508|11709508|11710450|11710450
+37,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,2830.00,0.0,0.0,WH_Arial_2.5mm_Transparent,11709508|11710450
+38,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11710450|11823181|11823179|11709508
+39,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11823191|11823115|2446354
+40,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11823152|11823115|2446354
+41,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11826899|11823191|11823139|11752528
+42,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11823181|11826899|2446354|11888143|11823181
+43,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11823179|11823179|11823183|11823183|11709508|11709508
+44,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,9614.95,0.0,0.0,WH_Arial_2.5mm_Transparent,11823179|9223410
+45,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446354|11855076|9223193
+46,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11879960|11826899|2446354
+47,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446354|11826899|11823191
+48,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446354|10249694|9223193
+49,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11710450|11710450|11823181|11823181
+50,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,10251234|11937512|11823181
+51,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446354|11857059|9223408
+52,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446354|12048000|9223410
+53,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11891873|9223410|9223410
+54,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,9223408|11891873|2446354
+55,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11710450|11880770|11706336|9267567|2446354|9223412
+56,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,9223441|11706336|11710450
+57,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11854084|11937160|11864642|11823181
+58,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,110.00,0.0,0.0,WH_Arial_2.5mm_Transparent,11710450|11758747
+59,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446422|2446354|9223412
+60,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11756530|11879960|11854764|11854523|11896796|11905265
+61,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,50.00,0.0,0.0,WH_Arial_2.5mm_Transparent,11854950|11826899
+62,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,35.00,0.0,0.0,WH_Arial_2.5mm_Transparent,11826899|11826899
+63,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11823179|11752528|2446354
+64,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11709508|11975866|11759345
+65,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,90.00,0.0,0.0,WH_Arial_2.5mm_Transparent,11823179|11856018
+66,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,110.00,0.0,0.0,WH_Arial_2.5mm_Transparent,11857174|11709508
+67,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,85.00,0.0,0.0,WH_Arial_2.5mm_Transparent,11891873|11891873
+68,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,85.00,0.0,0.0,WH_Arial_2.5mm_Transparent,11891873|11891873
+69,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,9223412|11754396|11710450|11756530|11823115|11823181
+70,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11823181|11752332|11752528|11823179
+71,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11823179|11910307|11823183|11823183|11910591|11709508|11759345|9223410
+72,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,2935.00,0.0,0.0,WH_Arial_2.5mm_Transparent,11826899|10251234
+73,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,85.00,0.0,0.0,WH_Arial_2.5mm_Transparent,11823115|11853774
+74,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11852893|10251234
+75,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11937363|10251234
+76,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11984644|11949904|11706336
+77,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11758747|9267567
+78,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11857174|9223441
+79,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11853704|11823139
+80,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11854491|11823191
+81,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11905265|11823115
+82,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11759345|9223410
+83,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11942431|11942431|10249694
+84,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11754396|11754349|11710450
+85,Elevation A,Elevation,Dimensions,Linear Dimension Style,900.00,0.0,0.0,Linear Dimension Style,11978330|11978331
+86,Elevation A,Elevation,Dimensions,Linear Dimension Style,580.00,0.0,0.0,Linear Dimension Style,11978330|11978330
+87,Elevation A,Elevation,Dimensions,Linear Dimension Style,280.00,0.0,0.0,Linear Dimension Style,11978363|11978364
+88,Elevation A,Elevation,Dimensions,Linear Dimension Style,800.00,0.0,0.0,Linear Dimension Style,11978363|11978363
+89,Elevation A,Elevation,Dimensions,Linear Dimension Style,240.00,0.0,0.0,Linear Dimension Style,11978375|11978376
+90,Elevation A,Elevation,Dimensions,Linear Dimension Style,380.00,0.0,0.0,Linear Dimension Style,11978375|11978375
+91,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,90.00,0.0,0.0,WH_Arial_2.5mm_Transparent,11975866|11975866
+92,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446354|11975866|11994213
+93,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11979818|11975866
+94,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11834558|11823152
+95,Elevation B,Elevation,Dimensions,Linear Dimension Style,240.00,0.0,0.0,Linear Dimension Style,11980192|11980193
+96,Elevation B,Elevation,Dimensions,Linear Dimension Style,160.00,0.0,0.0,Linear Dimension Style,11980192|11980192
+97,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,9223193|11854764
+98,Elevation C,Elevation,Dimensions,Linear Dimension Style,600.00,0.0,0.0,Linear Dimension Style,11980562|11980563
+99,Elevation C,Elevation,Dimensions,Linear Dimension Style,280.00,0.0,0.0,Linear Dimension Style,11980562|11980562
+100,Elevation A,Elevation,Dimensions,Linear Dimension Style,240.00,0.0,0.0,Linear Dimension Style,11981700|11981701
+101,Elevation A,Elevation,Dimensions,Linear Dimension Style,218.56,0.0,0.0,Linear Dimension Style,11981700|11981700
+102,Elevation D,Elevation,Dimensions,Linear Dimension Style,640.00,0.0,0.0,Linear Dimension Style,11986023|11986024
+103,Elevation D,Elevation,Dimensions,Linear Dimension Style,260.00,0.0,0.0,Linear Dimension Style,11986023|11986023
+104,Elevation D,Elevation,Dimensions,Linear Dimension Style,400.00,0.0,0.0,Linear Dimension Style,11987413|11987414
+105,Elevation D,Elevation,Dimensions,Linear Dimension Style,800.00,0.0,0.0,Linear Dimension Style,11987413|11987413
+106,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11910591|9223210
+107,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11887679|11872817
+108,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11756530|9223210
+109,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,9614.95,0.0,0.0,WH_Arial_2.5mm_Transparent,11891873|11823181
+110,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11891873|11710450|11823181
+111,Elevation A,Elevation,Dimensions,Linear Dimension Style,940.00,0.0,0.0,Linear Dimension Style,12002718|12002719
+112,Elevation A,Elevation,Dimensions,Linear Dimension Style,457.97,0.0,0.0,Linear Dimension Style,12002719|12002725
+113,Elevation A,Elevation,Dimensions,Linear Dimension Style,920.00,0.0,0.0,Linear Dimension Style,12002724|12002725
+114,Elevation A,Elevation,Dimensions,Linear Dimension Style,1792.40,0.0,0.0,Linear Dimension Style,12002725|12002731
+115,Elevation A,Elevation,Dimensions,Linear Dimension Style,900.00,0.0,0.0,Linear Dimension Style,12002730|12002731
+116,Elevation A,Elevation,Dimensions,Linear Dimension Style,65.57,0.0,0.0,Linear Dimension Style,12002719|12002731
+117,Elevation A,Elevation,Dimensions,Linear Dimension Style,65.57,0.0,0.0,Linear Dimension Style,12002719|12002725
+118,Elevation A,Elevation,Dimensions,Linear Dimension Style,520.00,0.0,0.0,Linear Dimension Style,12002719|12002720
+119,Elevation A,Elevation,Dimensions,Linear Dimension Style,460.00,0.0,0.0,Linear Dimension Style,12002731|12002729
+120,Elevation A,Elevation,Dimensions,Linear Dimension Style,5.57,0.0,0.0,Linear Dimension Style,12002717|12002723
+121,Elevation C,Elevation,Dimensions,Linear Dimension Style,900.00,0.0,0.0,Linear Dimension Style,12002782|12002783
+122,Elevation C,Elevation,Dimensions,Linear Dimension Style,1310.48,0.0,0.0,Linear Dimension Style,12002781|12002787
+123,Elevation C,Elevation,Dimensions,Linear Dimension Style,885.42,0.0,0.0,Linear Dimension Style,12002787|12002787
+124,Elevation C,Elevation,Dimensions,Linear Dimension Style,477.26,0.0,0.0,Linear Dimension Style,12002787|12002793
+125,Elevation C,Elevation,Dimensions,Linear Dimension Style,940.00,0.0,0.0,Linear Dimension Style,12002793|12002793
+126,Elevation C,Elevation,Dimensions,Linear Dimension Style,695.21,0.0,0.0,Linear Dimension Style,12002795|12002801
+127,Elevation C,Elevation,Dimensions,Linear Dimension Style,1440.00,0.0,0.0,Linear Dimension Style,12002800|12002801
+128,Elevation C,Elevation,Dimensions,Linear Dimension Style,4069.63,0.0,0.0,Linear Dimension Style,12002799|12002805
+129,Elevation C,Elevation,Dimensions,Linear Dimension Style,1180.00,0.0,0.0,Linear Dimension Style,12002805|12002805
+130,Elevation C,Elevation,Dimensions,Linear Dimension Style,20.15,0.0,0.0,Linear Dimension Style,12002806|12002788
+131,Elevation C,Elevation,Dimensions,Linear Dimension Style,21.14,0.0,0.0,Linear Dimension Style,12002789|12002795
+132,Elevation C,Elevation,Dimensions,Linear Dimension Style,27.37,0.0,0.0,Linear Dimension Style,12002795|12002800
+133,Elevation C,Elevation,Dimensions,Linear Dimension Style,50.14,0.0,0.0,Linear Dimension Style,12002788|12002782
+134,Elevation C,Elevation,Dimensions,Linear Dimension Style,440.00,0.0,0.0,Linear Dimension Style,12002806|12002806
+135,Elevation C,Elevation,Dimensions,Linear Dimension Style,426.68,0.0,0.0,Linear Dimension Style,12002789|12002787
+136,Elevation C,Elevation,Dimensions,Linear Dimension Style,415.00,0.0,0.0,Linear Dimension Style,12002801|12002799
+137,Elevation C,Elevation,Dimensions,Linear Dimension Style,450.00,0.0,0.0,Linear Dimension Style,12002795|12002796
+138,Elevation C,Elevation,Dimensions,Linear Dimension Style,450.00,0.0,0.0,Linear Dimension Style,12002783|12002781
+139,Elevation C,Elevation,Dimensions,Linear Dimension Style,2144.68,0.0,0.0,Linear Dimension Style,11974407|11974408
+140,Elevation C,Elevation,Dimensions,Linear Dimension Style,615.97,0.0,0.0,Linear Dimension Style,11974407|11974407
+141,Elevation D,Elevation,Dimensions,Linear Dimension Style,2317.61,0.0,0.0,Linear Dimension Style,11974368|11974369
+142,Elevation D,Elevation,Dimensions,Linear Dimension Style,758.88,0.0,0.0,Linear Dimension Style,11974368|11974368
+143,Elevation D,Elevation,Dimensions,Linear Dimension Style,1180.00,0.0,0.0,Linear Dimension Style,12004839|12004840
+144,Elevation D,Elevation,Dimensions,Linear Dimension Style,2089.36,0.0,0.0,Linear Dimension Style,12004838|12004844
+145,Elevation D,Elevation,Dimensions,Linear Dimension Style,1100.00,0.0,0.0,Linear Dimension Style,12004844|12004844
+146,Elevation D,Elevation,Dimensions,Linear Dimension Style,1545.57,0.0,0.0,Linear Dimension Style,12004844|12004850
+147,Elevation D,Elevation,Dimensions,Linear Dimension Style,980.00,0.0,0.0,Linear Dimension Style,12004850|12004850
+148,Elevation D,Elevation,Dimensions,Linear Dimension Style,429.11,0.0,0.0,Linear Dimension Style,12004852|12004858
+149,Elevation D,Elevation,Dimensions,Linear Dimension Style,920.00,0.0,0.0,Linear Dimension Style,12004857|12004858
+150,Elevation D,Elevation,Dimensions,Linear Dimension Style,1124.05,0.0,0.0,Linear Dimension Style,12004856|12004862
+151,Elevation D,Elevation,Dimensions,Linear Dimension Style,920.00,0.0,0.0,Linear Dimension Style,12004862|12004862
+152,Elevation D,Elevation,Dimensions,Linear Dimension Style,36.71,0.0,0.0,Linear Dimension Style,12004845|12004840
+153,Elevation D,Elevation,Dimensions,Linear Dimension Style,67.85,0.0,0.0,Linear Dimension Style,12004846|12004865
+154,Elevation D,Elevation,Dimensions,Linear Dimension Style,73.42,0.0,0.0,Linear Dimension Style,12004846|12004852
+155,Elevation D,Elevation,Dimensions,Linear Dimension Style,28.86,0.0,0.0,Linear Dimension Style,12004863|12004858
+156,Elevation D,Elevation,Dimensions,Linear Dimension Style,500.00,0.0,0.0,Linear Dimension Style,12004845|12004845
+157,Elevation D,Elevation,Dimensions,Linear Dimension Style,420.00,0.0,0.0,Linear Dimension Style,12004858|12004856
+158,Elevation D,Elevation,Dimensions,Linear Dimension Style,480.00,0.0,0.0,Linear Dimension Style,12004840|12004841
+159,Elevation D,Elevation,Dimensions,Linear Dimension Style,460.00,0.0,0.0,Linear Dimension Style,12004864|12004862
+160,Elevation D,Elevation,Dimensions,Linear Dimension Style,16.71,0.0,0.0,Linear Dimension Style,12004856|12004850
+161,Elevation D,Elevation,Dimensions,Linear Dimension Style,400.00,0.0,0.0,Linear Dimension Style,12004891|12004892
+162,Elevation D,Elevation,Dimensions,Linear Dimension Style,1800.00,0.0,0.0,Linear Dimension Style,12004891|12004891
+163,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11823179|11709508|11891873
+164,Elevation B,Elevation,Dimensions,Linear Dimension Style,447.70,0.0,0.0,Linear Dimension Style,12005444|12005445
+165,Elevation B,Elevation,Dimensions,Linear Dimension Style,1837.97,0.0,0.0,Linear Dimension Style,12005444|12005444
+166,Elevation B,Elevation,Dimensions,Linear Dimension Style,1440.00,0.0,0.0,Linear Dimension Style,12005458|12005459
+167,Elevation B,Elevation,Dimensions,Linear Dimension Style,1002.96,0.0,0.0,Linear Dimension Style,12005459|12005465
+168,Elevation B,Elevation,Dimensions,Linear Dimension Style,1180.00,0.0,0.0,Linear Dimension Style,12005464|12005465
+169,Elevation B,Elevation,Dimensions,Linear Dimension Style,871.72,0.0,0.0,Linear Dimension Style,12005465|12005475
+170,Elevation B,Elevation,Dimensions,Linear Dimension Style,860.00,0.0,0.0,Linear Dimension Style,12005474|12005475
+171,Elevation B,Elevation,Dimensions,Linear Dimension Style,20.00,0.0,0.0,Linear Dimension Style,12005459|12005475
+172,Elevation B,Elevation,Dimensions,Linear Dimension Style,28.99,0.0,0.0,Linear Dimension Style,12005474|12005466
+173,Elevation B,Elevation,Dimensions,Linear Dimension Style,380.00,0.0,0.0,Linear Dimension Style,12005465|12005463
+174,Elevation B,Elevation,Dimensions,Linear Dimension Style,420.00,0.0,0.0,Linear Dimension Style,12005474|12005473
+175,Elevation B,Elevation,Dimensions,Linear Dimension Style,440.00,0.0,0.0,Linear Dimension Style,12005459|12005460
+176,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11942221|11942221|11823152
+177,Elevation A,Elevation,Dimensions,Linear Dimension Style,929.83,0.0,0.0,Linear Dimension Style,11985509|11985510
+178,Elevation A,Elevation,Dimensions,Linear Dimension Style,463.94,0.0,0.0,Linear Dimension Style,11985509|11985509
+179,Elevation C,Elevation,Dimensions,Linear Dimension Style,820.00,0.0,0.0,Linear Dimension Style,12014151|12014152
+180,Elevation C,Elevation,Dimensions,Linear Dimension Style,380.00,0.0,0.0,Linear Dimension Style,12014151|12014151
+181,Elevation D,Elevation,Dimensions,Linear Dimension Style,840.00,0.0,0.0,Linear Dimension Style,12014180|12014181
+182,Elevation D,Elevation,Dimensions,Linear Dimension Style,320.00,0.0,0.0,Linear Dimension Style,12014180|12014180
+183,Elevation C,Elevation,Dimensions,Linear Dimension Style,798.37,0.0,0.0,Linear Dimension Style,11983181|11983182
+184,Elevation C,Elevation,Dimensions,Linear Dimension Style,422.18,0.0,0.0,Linear Dimension Style,11983181|11983181
+185,Elevation D,Elevation,Dimensions,Linear Dimension Style,776.78,0.0,0.0,Linear Dimension Style,11983218|11983219
+186,Elevation D,Elevation,Dimensions,Linear Dimension Style,344.18,0.0,0.0,Linear Dimension Style,11983218|11983218
+187,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446354|11979818|9223408
+188,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11823183|11888978
+189,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11889051|11823183
+190,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11889051|11942431
+191,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11888978|10249694
+192,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11889051|10249694
+193,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11888978|11890959
+194,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11889051|11948008
+195,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,10249694|11847240|2446354
+196,Elevation D,Elevation,Dimensions,Linear Dimension Style,340.00,0.0,0.0,Linear Dimension Style,12015346|12015347
+197,Elevation D,Elevation,Dimensions,Linear Dimension Style,1698.48,0.0,0.0,Linear Dimension Style,12015345|12015351
+198,Elevation D,Elevation,Dimensions,Linear Dimension Style,300.00,0.0,0.0,Linear Dimension Style,12015351|12015351
+199,Elevation D,Elevation,Dimensions,Linear Dimension Style,1.01,0.0,0.0,Linear Dimension Style,12015347|12015353
+200,Elevation D,Elevation,Dimensions,Linear Dimension Style,480.00,0.0,0.0,Linear Dimension Style,12015353|12015351
+201,Elevation D,Elevation,Dimensions,Linear Dimension Style,520.00,0.0,0.0,Linear Dimension Style,12015346|12015346
+202,Elevation A,Elevation,Dimensions,Linear Dimension Style,460.00,0.0,0.0,Linear Dimension Style,12015390|12015391
+203,Elevation A,Elevation,Dimensions,Linear Dimension Style,1860.00,0.0,0.0,Linear Dimension Style,12015390|12015390
+204,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,20.00,0.0,0.0,WH_Arial_2.5mm_Transparent,2446354|11891873
+205,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11756530|9267567
+206,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11910307|11823179
+207,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11910307|11823177
+208,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11910307|11856265
+209,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11910307|11823115
+210,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11847240|11883911
+211,Elevation A,Elevation,Dimensions,Linear Dimension Style,1100.00,0.0,0.0,Linear Dimension Style,11986836|11986837
+212,Elevation A,Elevation,Dimensions,Linear Dimension Style,1000.00,0.0,0.0,Linear Dimension Style,11986836|11986836
+213,Elevation A,Elevation,Dimensions,Linear Dimension Style,323.29,0.0,0.0,Linear Dimension Style,12041370|12041371
+214,Elevation A,Elevation,Dimensions,Linear Dimension Style,2020.00,0.0,0.0,Linear Dimension Style,12041370|12041370
+215,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11710450|11978925
+216,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11978925|11706336
+217,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11854246|10251234
+218,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11995248|11854177
+219,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11864642|11995248
+220,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11855317|12034422
+221,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11879850|11872817
+222,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11855260|9223193
+223,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11905265|11823139
+224,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11905265|11823177
+225,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11905265|11823181
+226,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11917119|11917298
+227,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11917119|11917298
+228,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11855534|11823139
+229,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11754344|9223281
+230,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,9223193|11756530
+231,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11756530|9223210
+232,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11754396|9223412
+233,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11823170|11854523
+234,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11710450|12045826|2446354|11891873|11754396|9223412
+235,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11826899|12048000
+236,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11979212|9223441
+237,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,12049054|9267567
+238,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11854950|11836123
+239,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446354|9223193|11826899
+240,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11823152|11856336
+241,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11823152|11856336
+242,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,12050743|12034478
+243,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11887225|11917298
+244,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11856018|11823177
+245,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11889051|11942431
+246,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446354|11823152|10249694
+247,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11910591|9223408
+248,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11910591|9223210
+249,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11856636|9223193
+250,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11856636|9223193
+251,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,2446354|11823152|11823152
+252,Elevation D,Elevation,Dimensions,Linear Dimension Style,850.00,0.0,0.0,Linear Dimension Style,12051690|12051691
+253,Elevation D,Elevation,Dimensions,Linear Dimension Style,1200.00,0.0,0.0,Linear Dimension Style,12051690|12051690
+254,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,12051754|12034446
+255,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11910591|9223210
+256,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11853957|11958646
+257,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11823115|11853774
+258,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11752332|11823139
+259,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11752332|11823115
+260,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11752332|11710450
+261,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11752332|11823115
+262,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11752528|11709508
+263,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11752528|11823115
+264,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11752528|10249694
+265,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11752528|11823177
+266,Elevation B,Elevation,Dimensions,Linear Dimension Style,960.00,0.0,0.0,Linear Dimension Style,12052451|12052452
+267,Elevation B,Elevation,Dimensions,Linear Dimension Style,360.00,0.0,0.0,Linear Dimension Style,12052451|12052451
+268,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11853285|11853503
+269,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11878849|11852972
+270,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11995248|11852972
+271,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,10251234|11853129
+272,Elevation C,Elevation,Dimensions,Linear Dimension Style,960.00,0.0,0.0,Linear Dimension Style,12053848|12053849
+273,Elevation C,Elevation,Dimensions,Linear Dimension Style,1440.00,0.0,0.0,Linear Dimension Style,12053848|12053848
+274,Elevation C,Elevation,Dimensions,Linear Dimension Style,560.00,0.0,0.0,Linear Dimension Style,12053865|12053866
+275,Elevation C,Elevation,Dimensions,Linear Dimension Style,380.00,0.0,0.0,Linear Dimension Style,12053865|12053865
+276,Elevation D,Elevation,Dimensions,Linear Dimension Style,520.00,0.0,0.0,Linear Dimension Style,12053881|12053882
+277,Elevation D,Elevation,Dimensions,Linear Dimension Style,300.00,0.0,0.0,Linear Dimension Style,12053881|12053881
+278,Elevation D,Elevation,Dimensions,Linear Dimension Style,255.00,0.0,0.0,Linear Dimension Style,12054096|12054097
+279,Elevation D,Elevation,Dimensions,Linear Dimension Style,1860.00,0.0,0.0,Linear Dimension Style,12054096|12054096
+280,Elevation A,Elevation,Dimensions,Linear Dimension Style,580.00,0.0,0.0,Linear Dimension Style,12056071|12056072
+281,Elevation A,Elevation,Dimensions,Linear Dimension Style,760.00,0.0,0.0,Linear Dimension Style,12056071|12056071
+282,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,12011498|9223441
+283,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,12011499|9223441
+284,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,60.00,0.0,0.0,WH_Arial_2.5mm_Transparent,9223441|11949904
+285,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,12011500|11949904
+286,Elevation A,Elevation,Dimensions,Linear Dimension Style,450.00,0.0,0.0,Linear Dimension Style,12011498|12011498
+287,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,WH_Arial_2.5mm_Transparent,11984644|12059416|9223441
+288,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,30.00,0.0,0.0,WH_Arial_2.5mm_Transparent,12060882|2446354
+289,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,20.00,0.0,0.0,WH_Arial_2.5mm_Transparent,2446354|11891873
+290,Elevation A,Elevation,Dimensions,Linear Dimension Style,3380.00,0.0,0.0,Linear Dimension Style,12063697|12063698
+291,Elevation A,Elevation,Dimensions,Linear Dimension Style,460.00,0.0,0.0,Linear Dimension Style,12063697|12063697
+292,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,11978432|11975866
+293,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,12063929|11891873
+294,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,12063903|11891873
+295,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,30.00,0.0,0.0,WH_Arial_2.5mm_Transparent,12060882|2446354
+296,Elevation C,Elevation,Dimensions,Linear Dimension Style,2080.00,0.0,0.0,Linear Dimension Style,12064062|12064063
+297,Elevation C,Elevation,Dimensions,Linear Dimension Style,753.26,0.0,0.0,Linear Dimension Style,12064062|12064062
+298,Elevation D,Elevation,Dimensions,Linear Dimension Style,486.92,0.0,0.0,Linear Dimension Style,12064465|12064466
+299,Elevation D,Elevation,Dimensions,Linear Dimension Style,454.43,0.0,0.0,Linear Dimension Style,12064464|12064472
+300,Elevation D,Elevation,Dimensions,Linear Dimension Style,460.00,0.0,0.0,Linear Dimension Style,12064472|12064472
+301,Elevation D,Elevation,Dimensions,Linear Dimension Style,31.11,0.0,0.0,Linear Dimension Style,12064466|12064474
+302,Elevation D,Elevation,Dimensions,Linear Dimension Style,535.45,0.0,0.0,Linear Dimension Style,12064465|12064465
+303,Elevation D,Elevation,Dimensions,Linear Dimension Style,530.00,0.0,0.0,Linear Dimension Style,12064474|12064472
+304,Elevation D,Elevation,Dimensions,Linear Dimension Style,496.67,0.0,0.0,Linear Dimension Style,12065914|12065915
+305,Elevation D,Elevation,Dimensions,Linear Dimension Style,520.27,0.0,0.0,Linear Dimension Style,12065914|12065914
+306,Elevation C,Elevation,Dimensions,Linear Dimension Style,465.00,0.0,0.0,Linear Dimension Style,12066013|12066016
+307,Elevation C,Elevation,Dimensions,Linear Dimension Style,801.74,0.0,0.0,Linear Dimension Style,12066016|12066019
+308,Elevation C,Elevation,Dimensions,Linear Dimension Style,295.11,0.0,0.0,Linear Dimension Style,12066021|12066022
+309,Elevation C,Elevation,Dimensions,Linear Dimension Style,258.52,0.0,0.0,Linear Dimension Style,12066016|12066014
+310,Elevation A,Elevation,Dimensions,Linear Dimension Style,537.46,0.0,0.0,Linear Dimension Style,12066273|12066274
+311,Elevation A,Elevation,Dimensions,Linear Dimension Style,197.38,0.0,0.0,Linear Dimension Style,12066273|12066273
+312,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0.0,0.0,Alignment,12048000|9223281
+313,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,100.00,0.0,0.0,WH_Arial_2.5mm_Transparent,11710450|12060882
+314,Elevation A,Elevation,Dimensions,Linear Dimension Style,217.26,0.0,0.0,Linear Dimension Style,12066817|12066824
+315,Elevation A,Elevation,Dimensions,Linear Dimension Style,220.00,0.0,0.0,Linear Dimension Style,12066823|12066825
+316,Elevation A,Elevation,Dimensions,Linear Dimension Style,62.74,0.0,0.0,Linear Dimension Style,12066818|12066819
+317,Elevation A,Elevation,Dimensions,Linear Dimension Style,416.33,0.0,0.0,Linear Dimension Style,12066824|12066818
+318,Elevation A,Elevation,Dimensions,Linear Dimension Style,0.00,0.0,0.0,Linear Dimension Style,12066817|12066818
+319,Elevation A,Elevation,Dimensions,Linear Dimension Style,280.00,0.0,0.0,Linear Dimension Style,12066817|12066817
+320,Elevation C,Elevation,Dimensions,Linear Dimension Style,460.00,0.0,0.0,Linear Dimension Style,12067415|12067416
+321,Elevation C,Elevation,Dimensions,Linear Dimension Style,520.00,0.0,0.0,Linear Dimension Style,12067415|12067415
+322,Elevation D,Elevation,Dimensions,Linear Dimension Style,460.00,0.0,0.0,Linear Dimension Style,12067600|12067601
+323,Elevation D,Elevation,Dimensions,Linear Dimension Style,640.00,0.0,0.0,Linear Dimension Style,12067600|12067600
+324,Elevation A,Elevation,TextNotes,text_note,UNIT FFL,55.74999996669349,-156.59672149160255,WH_Arial_2.0mm_Transparent,9223408|11891873|9223410
+325,Elevation A,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB,63.60205371661952,316.48033935895546,WH_Arial_2.0mm_Transparent,2446354|2446422|7742895
+326,Elevation A,Elevation,TextNotes,text_note,UNIT FFL,55.74999996669349,-156.59672149160255,WH_Arial_2.0mm_Transparent,9223408|11891873|9223410
+327,Elevation B,Elevation,TextNotes,text_note,UNIT FFL,75.54729710245655,-131.06788515944046,WH_Arial_2.0mm_Transparent,11831535|11823211|11996668
+328,Elevation B,Elevation,TextNotes,text_note,UNIT FFL,75.54729710245655,-131.06788515944046,WH_Arial_2.0mm_Transparent,11831535|11823211|11996668
+329,Elevation A,Elevation,TextNotes,text_note,AC LEDGE,66.52608292770664,240.54894779972605,WH_Arial_2.5mm_Bold_Transparent_Dark Purple_WF-1 2,2446354|2446422|7742895
+330,Elevation B,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB,66.73897033486425,342.00917569111743,WH_Arial_2.0mm_Transparent,2446354|2446422|7742895
+331,Elevation B,Elevation,TextNotes,text_note,160mm THK. RC SLAB,69.0430188882206,342.00917569111743,WH_Arial_2.0mm_Transparent,2446354|2446422|7742895
+332,Elevation C,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB,-400.5292232914857,-135.7338490778811,WH_Arial_2.0mm_Transparent,2446354|2446422|7742895
+333,Elevation C,Elevation,TextNotes,text_note,130mm THK. RC SLAB,545.6248984096503,-142.93557670211638,WH_Arial_2.0mm_Transparent,11783677|11829735|11783674
+334,Elevation D,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB,532.3976474907273,-125.94948803654266,WH_Arial_2.0mm_Transparent,11830420|11823208|11823228
+335,Elevation D,Elevation,TextNotes,text_note,140mm~125mm THK. RC SLAB,532.3976474907272,-148.84553629668736,WH_Arial_2.0mm_Transparent,11783683|11783684|11783680
+336,Elevation D,Elevation,TextNotes,text_note,130mm THK. RC SLAB,532.3976474907272,-139.56222029027484,WH_Arial_2.0mm_Transparent,11783615|11829753|11783674
+337,Elevation C,Elevation,TextNotes,text_note,BEDROOM 2,-324.5978317322562,-141.56860223756703,WH_Arial_2.5mm_Bold_Transparent_Dark Purple_WF-1 2,2446354|2446422|7742895
+338,Elevation C,Elevation,TextNotes,text_note,AC LEDGE,-324.5978317322562,-151.64705536091904,WH_Arial_2.5mm_Bold_Transparent_Dark Purple_WF-1 2,2446354|2446422|7742895
+339,Elevation D,Elevation,TextNotes,text_note,BEDROOM 2,-337.8250826511793,-142.42162061027062,WH_Arial_2.5mm_Bold_Transparent_Dark Purple_WF-1 2,2446354|2446422|7742895
+340,Elevation D,Elevation,TextNotes,text_note,AC LEDGE,-337.8250826511793,-151.6610709272032,WH_Arial_2.5mm_Bold_Transparent_Dark Purple_WF-1 2,2446354|2446422|7742895
+341,Elevation A,Elevation,TextNotes,text_note,TOW UNIT FFL +1000,64.87518975498764,293.97742549001475,WH_Arial_2.0mm_Transparent,2446354|2446422|7742895
+342,Elevation B,Elevation,TextNotes,text_note,SHO,68.75550088577626,7.481370349012556e-13,WH_Arial_2.5mm_Bold_Transparent_Dark Purple_WF-1 2,2446354|2446422|7742895
+343,Elevation B,Elevation,TextNotes,text_note,STORE,64.0300442577693,7.040135827872507e-13,WH_Arial_2.5mm_Bold_Transparent_Dark Purple_WF-1 2,2446354|2446422|7742895
+344,Elevation B,Elevation,TextNotes,text_note,245mm THK. RC SLAB,64.8021407990913,342.0091756911174,WH_Arial_2.0mm_Transparent,2446354|2446422|7742895
+345,Elevation D,Elevation,TextNotes,text_note,STORE,-337.8250826511793,-128.86805074862843,WH_Arial_2.5mm_Bold_Transparent_Dark Purple_WF-1 2,2446354|2446422|7742895
+346,Elevation C,Elevation,TextNotes,text_note,195mm THK. RC SLAB,545.6248984096503,-131.7274133420954,WH_Arial_2.0mm_Transparent,11996668|11823212|11831535
+347,Elevation C,Elevation,TextNotes,text_note,160mm THK. RC SLAB,545.6248984096504,-125.60274748711792,WH_Arial_2.0mm_Transparent,11830420|11823208|11823228
+348,Elevation C,Elevation,TextNotes,text_note,140mm~125mm THK. RC SLAB,545.6248984096503,-152.62495537063725,WH_Arial_2.0mm_Transparent,11783683|11783684|11783680
+349,Elevation C,Elevation,TextNotes,text_note,BATH,-324.5978317322562,-129.03579383861674,WH_Arial_2.5mm_Bold_Transparent_Dark Purple_WF-1 2,2446354|2446422|7742895
+350,Elevation C,Elevation,TextNotes,text_note,SHO,-324.5978317322562,-124.96755236880064,WH_Arial_2.5mm_Bold_Transparent_Dark Purple_WF-1 2,2446354|2446422|7742895
+WALL,509.6322664301855,-129.88227914068466,WH_Arial_2.0mm_Transparent,,None,,,,
+WALL,509.6322664301855,-134.57371733794454,WH_Arial_2.0mm_Transparent,,None,,,,
+353,Elevation D,Elevation,TextNotes,text_note,SLAB THICKNESS  TO BE CONFIRMED,450.3310853278233,-150.07841421213027,WH_Arial_2.0mm_Transparent - BLUE -B,11783683|11783684|11783680
+354,Elevation C,Elevation,TextNotes,text_note,VOID,545.6248984096503,-153.1683541424356,WH_Arial_2.0mm_Transparent,11783683|11783684|11783680
+355,Elevation D,Elevation,TextNotes,text_note,245mm THK. RC SLAB,532.3976474907272,-126.69352698517798,WH_Arial_2.0mm_Transparent,11830420|11823208|11830515
+356,Elevation A,Elevation,TextNotes,text_note,140mm~125mm THK. RC SLAB BEHIND,67.06402295292882,316.48033935895546,WH_Arial_2.0mm_Transparent,2446354|2446422|7742895
+357,Elevation A,Elevation,Tags,Structural Framing Tags,TB4250(W)x220(D),58.68667018638822,-153.96859761552182,With TOP,9223410
+358,Elevation A,Elevation,Tags,Structural Framing Tags,TB3 CANT.200(W)x220(D),71.99319773116162,-151.55718029268667,With TOP,9223412
+359,Elevation A,Elevation,Tags,Structural Framing Tags,TB4250(W)x220(D),63.17715070610862,-153.9685976155216,With TOP,9223410
+360,Elevation B,Elevation,Tags,Structural Framing Tags,TB1200(W)x295(D),59.59845249233919,-135.5138732060729,With TOP,10249694
+361,Elevation C,Elevation,Tags,Structural Framing Tags,TB3 CANT.200(W)x220(D),69.80017658470659,-156.7770395598999,With TOP,9223412
+362,Elevation D,Elevation,Tags,Structural Framing Tags,TB3 CANT.200(W)x220(D),61.82773563975265,-156.52408052466856,With TOP,9223408
+363,Elevation D,Elevation,Tags,Structural Framing Tags,TB1200(W)x295(D),61.17156766074801,-137.45613442093338,With TOP,10249694
+364,Elevation B,Elevation,Tags,Structural Framing Tags,TB1E200(W)x295/245/210(D),73.30805713513269,-135.46474203395198,With TOP,11826899
+365,Elevation B,Elevation,Tags,Structural Framing Tags,TB1C200(W)x295/210(D),65.94508188020326,-123.24369485133316,With TOP,11823115
+366,Elevation C,Elevation,Tags,Structural Framing Tags,TB1C200(W)x295/210(D),65.81394649303368,-121.47361996999156,With TOP,11823115
+367,Elevation C,Elevation,Tags,Structural Framing Tags,TB1200(W)x295(D),65.813956112087,-145.38919640063244,With TOP,9223210
+368,Elevation C,Elevation,Tags,Structural Framing Tags,TB1E200(W)x295/245/210(D),69.80017658470662,-139.2440712949014,With TOP,11826899
+369,Elevation D,Elevation,Tags,Structural Framing Tags,TB1C200(W)x295/210(D),65.81394649303368,-126.24229338730666,With TOP,11823115
+370,Elevation D,Elevation,Tags,Structural Framing Tags,TB1200(W)x295(D),65.813956112087,-145.34305190621407,With TOP,9223210
+371,Elevation D,Elevation,Tags,Structural Framing Tags,TB3 CANT.200(W)x220(D),61.82773563975265,-149.74966585065914,With TOP,9223408
+372,Elevation C,Elevation,Tags,Structural Framing Tags,TB3 CANT.200(W)x220(D),69.80017658470659,-150.0727055661468,With TOP,9223412
+373,Elevation D,Elevation,Tags,Revision Cloud Tags,B,58.92688585275771,-152.68673266126703,Revision 0 Tag-3mm,11974365
+374,Elevation C,Elevation,Tags,Revision Cloud Tags,B,72.02290317588019,-153.5141628754424,Revision 0 Tag-3mm,11974404
+375,Elevation A,Elevation,Tags,Revision Cloud Tags,B,63.17831808367104,-155.94055351260985,Revision 0 Tag-3mm,11978315
+376,Elevation A,Elevation,Tags,Revision Cloud Tags,B,72.60947907991776,-155.94055351260985,Revision 0 Tag-3mm,11978360
+377,Elevation A,Elevation,Tags,Revision Cloud Tags,B,72.60947907991776,-155.94055351260985,Revision 0 Tag-3mm,11978372
+378,Elevation B,Elevation,Tags,Revision Cloud Tags,B,64.89604802725316,-121.34019487073668,Revision 0 Tag-3mm,11980189
+379,Elevation C,Elevation,Tags,Revision Cloud Tags,B,72.02290317588019,-135.07300170566867,Revision 0 Tag-3mm,11980559
+380,Elevation C,Elevation,Tags,Revision Cloud Tags,B,72.02290317588019,-152.75156688357654,Revision 0 Tag-3mm,11983178
+381,Elevation D,Elevation,Tags,Revision Cloud Tags,B,58.92688585275771,-152.15320012389276,Revision 0 Tag-3mm,11983215
+382,Elevation A,Elevation,Tags,Revision Cloud Tags,B,68.30548144703712,-155.94055351260985,Revision 0 Tag-3mm,11985506
+383,Elevation D,Elevation,Tags,Revision Cloud Tags,B,58.92688585275771,-150.35440879781322,Revision 0 Tag-3mm,11986020
+384,Elevation A,Elevation,Tags,Revision Cloud Tags,B,63.99981079448615,-155.94055351260985,Revision 0 Tag-3mm,11986833
+385,Elevation D,Elevation,Tags,Revision Cloud Tags,B,58.92688585275771,-157.09037917906605,Revision 0 Tag-3mm,11987410
+386,Elevation A,Elevation,Tags,Revision Cloud Tags,B,56.38130879175184,-155.94055351260985,Revision 0 Tag-3mm,12002715
+387,Elevation A,Elevation,Tags,Revision Cloud Tags,B,65.64314361997096,-155.94055351260985,Revision 0 Tag-3mm,12002715
+388,Elevation A,Elevation,Tags,Revision Cloud Tags,B,72.95558710418116,-155.94055351260985,Revision 0 Tag-3mm,12002715
+389,Elevation C,Elevation,Tags,Revision Cloud Tags,B,72.02290317588019,-155.90968785789173,Revision 0 Tag-3mm,12002779
+390,Elevation C,Elevation,Tags,Revision Cloud Tags,B,72.02290317588019,-149.8007084644607,Revision 0 Tag-3mm,12002779
+391,Elevation C,Elevation,Tags,Revision Cloud Tags,B,72.02290317588019,-142.508536291807,Revision 0 Tag-3mm,12002779
+392,Elevation C,Elevation,Tags,Revision Cloud Tags,B,72.02290317588019,-121.14763199165648,Revision 0 Tag-3mm,12002779
+393,Elevation D,Elevation,Tags,Revision Cloud Tags,B,58.92688585275771,-121.74619296134496,Revision 0 Tag-3mm,12004888
+394,Elevation D,Elevation,Tags,Revision Cloud Tags,B,58.92688585275771,-129.10241930583524,Revision 0 Tag-3mm,12004836
+395,Elevation D,Elevation,Tags,Revision Cloud Tags,B,58.92688585275771,-139.66493708596207,Revision 0 Tag-3mm,12004836
+396,Elevation D,Elevation,Tags,Revision Cloud Tags,B,58.92688585275771,-143.1267898780062,Revision 0 Tag-3mm,12004836
+397,Elevation D,Elevation,Tags,Revision Cloud Tags,B,58.92688585275771,-152.32872068067806,Revision 0 Tag-3mm,12004836
+398,Elevation D,Elevation,Tags,Revision Cloud Tags,B,58.92688585275771,-157.2474333407596,Revision 0 Tag-3mm,12004836
+399,Elevation B,Elevation,Tags,Revision Cloud Tags,B,73.65025071625578,-121.34019487073658,Revision 0 Tag-3mm,12005455
+400,Elevation B,Elevation,Tags,Revision Cloud Tags,B,59.48959954004263,-121.34019487073672,Revision 0 Tag-3mm,12005455
+401,Elevation B,Elevation,Tags,Revision Cloud Tags,B,68.28728279192296,-121.34019487073664,Revision 0 Tag-3mm,12005455
+402,Elevation A,Elevation,Tags,Revision Cloud Tags,B,57.77569857154384,-155.94055351260985,Revision 0 Tag-3mm,12015387
+403,Elevation A,Elevation,Tags,Revision Cloud Tags,A1,72.85532922008711,-155.94055351260985,Revision 0 Tag-3mm,12041367
+404,Elevation C,Elevation,Tags,Structural Framing Tags,DOWN HANG WALL110(W)x285(D),65.81396040843765,-150.6598033380767,Type Name,11984644
+405,Elevation A,Elevation,Tags,Structural Framing Tags,DOWN HANG WALL110(W)x285(D),67.56798390720027,-148.32555299609848,Type Name,11984644
+406,Elevation D,Elevation,Tags,Structural Framing Tags,DOWN HANG WALL110(W)x285(D),65.81396040843765,-150.16628539578167,Type Name,11984644
+407,Elevation D,Elevation,Tags,Revision Cloud Tags,A1,58.92688585275771,-126.52903158808104,Revision 0 Tag-3mm,12051311
+408,Elevation B,Elevation,Tags,Revision Cloud Tags,A1,62.879127403383,-121.34019487073668,Revision 0 Tag-3mm,12052448
+409,Elevation C,Elevation,Tags,Revision Cloud Tags,A1,72.02290317588019,-131.12103343055213,Revision 0 Tag-3mm,12053845
+410,Elevation C,Elevation,Tags,Revision Cloud Tags,A1,72.02290317588019,-154.03721713129542,Revision 0 Tag-3mm,12053862
+411,Elevation D,Elevation,Tags,Revision Cloud Tags,A1,58.92688585275771,-152.8094961946615,Revision 0 Tag-3mm,12053878
+412,Elevation D,Elevation,Tags,Revision Cloud Tags,A1,58.92688585275771,-156.97450649711442,Revision 0 Tag-3mm,12054093
+413,Elevation A,Elevation,Tags,Revision Cloud Tags,B,63.36680178978711,-155.94055351260985,Revision 0 Tag-3mm,12056068
+414,Elevation A,Elevation,Tags,Revision Cloud Tags,B,62.40900923313294,-155.94055351260985,Revision 0 Tag-3mm,12063694
+415,Elevation C,Elevation,Tags,Revision Cloud Tags,B,72.02290317588019,-153.9638161347872,Revision 0 Tag-3mm,12064059
+416,Elevation D,Elevation,Tags,Revision Cloud Tags,B,58.92688585275771,-152.61302883383493,Revision 0 Tag-3mm,12064462
+417,Elevation D,Elevation,Tags,Revision Cloud Tags,B1,58.92688585275771,-152.57750817556368,Revision 0 Tag-3mm,12065911
+418,Elevation C,Elevation,Tags,Revision Cloud Tags,B1,72.02290317588019,-153.17101833646234,Revision 0 Tag-3mm,12066011
+419,Elevation A,Elevation,Tags,Revision Cloud Tags,B1,68.9371100077908,-155.94055351260985,Revision 0 Tag-3mm,12066270
+420,Elevation A,Elevation,Tags,Revision Cloud Tags,B2,68.7368997445377,-155.94055351260985,Revision 0 Tag-3mm,12066814
+421,Elevation C,Elevation,Tags,Revision Cloud Tags,B2,72.02290317588019,-150.2986868039271,Revision 0 Tag-3mm,12067412
+422,Elevation D,Elevation,Tags,Revision Cloud Tags,B2,58.92688585275771,-152.61165777227566,Revision 0 Tag-3mm,12067597
+423,Elevation A,Elevation,Detail Items,generic_annotation,Opening,61.49964594997277,-155.94055351260985,Opening,
+424,Elevation A,Elevation,Detail Items,generic_annotation,Detail Filled Region,55.75095840153311,-355.84691627731974,Detail Filled Region,
+425,Elevation A,Elevation,Detail Items,generic_annotation,Opening,70.12826057433188,-155.94055351260985,Opening,
+426,Elevation A,Elevation,Detail Items,generic_annotation,Detail Filled Region,55.75095840153312,-355.84691627731974,Detail Filled Region,
+427,Elevation B,Elevation,Detail Items,generic_annotation,Detail Filled Region,75.54825553729619,-321.24655763544644,Detail Filled Region,
+428,Elevation B,Elevation,Detail Items,generic_annotation,Detail Filled Region,75.54825553729619,-321.24655763544644,Detail Filled Region,
+429,Elevation B,Elevation,Detail Items,generic_annotation,Opening,70.12826057420772,-121.3401948707366,Opening,
+430,Elevation B,Elevation,Detail Items,generic_annotation,Opening,61.49965165024912,-121.34019487073668,Opening,
+431,Elevation C,Elevation,Detail Items,generic_annotation,Opening,72.02290317588019,-154.3787026023978,Opening,
+432,Elevation C,Elevation,Detail Items,generic_annotation,Opening,72.02290317588019,-147.99746900672127,Opening,
+433,Elevation D,Elevation,Detail Items,generic_annotation,Opening,58.92688585275771,-154.37870260239828,Opening,
+434,Elevation C,Elevation,Detail Items,generic_annotation,Opening,72.02290317588019,-123.57177884083416,Opening,
+435,Elevation D,Elevation,Detail Items,generic_annotation,Opening,58.92688585275771,-123.5717788407108,Opening,
+436,Elevation D,Elevation,Detail Items,generic_annotation,Opening,58.92688585275771,-147.9974690067217,Opening,
+437,Elevation A,Elevation,Detail Items,generic_annotation,Detail Filled Region,61.97537343477974,-155.94055351260985,Detail Filled Region,

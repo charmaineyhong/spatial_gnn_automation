@@ -1,0 +1,7 @@
+PPVC Name: PPVC 24_Typ
+PPVC Name (no ext): PPVC 24_Typ
+Whitelist Path: C:\Users\charm\source\repos\PPVCRevitAddin\PPVCRevitAddin\bin\x64\Debug\annotation_whitelist.csv
+Whitelist Exists: True
+Whitelist IDs loaded: 64
+First 10 IDs: 12301937, 12302273, 12302423, 12302435, 12302447, 12302550, 12302567, 12302678, 12302694, 12321307
+

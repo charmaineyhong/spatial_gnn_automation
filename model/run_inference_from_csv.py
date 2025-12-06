@@ -11,6 +11,9 @@ Usage (example):
 """
 
 import argparse
+import os
+# Force CPU mode to avoid CUDA library loading issues
+os.environ['CUDA_VISIBLE_DEVICES'] = ''
 import torch
 from combined_inference import (
     parse_csv_to_pyg,
@@ -37,12 +40,13 @@ def main():
         help="Path to text model",
     )
     parser.add_argument("--dim_threshold", type=float, default=0.7)
-    parser.add_argument("--text_threshold", type=float, default=0.4)
-    parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    parser.add_argument("--text_threshold", type=float, default=0.5)
+    parser.add_argument("--device", default="cpu", help="Device to use (cpu or cuda)")
 
     args = parser.parse_args()
 
-    device = torch.device(args.device)
+    # Force CPU to avoid CUDA library issues
+    device = torch.device("cpu")
 
     print("=== CSV GNN Inference ===")
     print("nodes_csv:", args.nodes_csv)

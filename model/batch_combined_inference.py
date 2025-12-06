@@ -30,7 +30,7 @@ def main():
                        help='Path to text model')
     parser.add_argument('--dim_threshold', type=float, default=0.7,
                        help='Threshold for dimension prediction')
-    parser.add_argument('--text_threshold', type=float, default=0.4,
+    parser.add_argument('--text_threshold', type=float, default=0.7,
                        help='Threshold for text prediction')
     parser.add_argument('--device', default='cuda' if torch.cuda.is_available() else 'cpu',
                        help='Device to use (cuda/cpu)')

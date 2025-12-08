@@ -57,17 +57,17 @@ annotation_id,element_id,view_name,view_type,category,annotation_type,value,x,y,
 56,12475887,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,65.00,0,0,WH_Arial_2.5mm_Transparent,
 57,12476043,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,450.20,0,0,WH_Arial_2.5mm_Transparent,12303468
 58,12521098,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,2395.00,0,0,WH_Arial_2.5mm_Transparent,12517863|2446354
-59,12316536,Elevation A,Elevation,TextNotes,text_note,75mm THK ROOF SLAB,12.538582719851867,0,WH_Arial_2.0mm_Transparent,
-60,12318008,Elevation C,Elevation,TextNotes,text_note,75mm THK ROOF SLAB,-126.95427536751487,-133.3955552223801,WH_Arial_2.0mm_Transparent,
-61,12320135,Elevation A,Elevation,TextNotes,text_note,130mm THK RC SLAB,12.271486959863843,0,WH_Arial_2.0mm_Transparent,
-62,12324738,Elevation B,Elevation,TextNotes,text_note,75mm THK ROOF SLAB,12.368175385736528,0,WH_Arial_2.0mm_Transparent,
-63,12324741,Elevation B,Elevation,TextNotes,text_note,210mm THK RC SLAB,15.947891923741427,0,WH_Arial_2.0mm_Transparent,
-64,12324817,Elevation B,Elevation,TextNotes,text_note,SLAB OPENINGTO CAST OVER,22.203334674050197,0,WH_Arial_2.0mm_Transparent,
-65,12326129,Elevation C,Elevation,TextNotes,text_note,ROOF OPENING ,-126.95427536751487,-124.5667839534926,WH_Arial_2.0mm_Transparent,
-66,12331536,Elevation D,Elevation,TextNotes,text_note,75mm THK ROOF SLAB,0,-137.21780065066625,WH_Arial_2.0mm_Transparent,
-67,12331544,Elevation D,Elevation,TextNotes,text_note,130mm THK RC SLAB,0,-138.07192142880731,WH_Arial_2.0mm_Transparent,12299284|12355377|12355387|12355388
-68,12367696,Elevation C,Elevation,TextNotes,text_note,130mm THKRC SLAB,0,-138.64953397255684,WH_Arial_2.0mm_Transparent,12299284|12354751|12355377|12355387|12355388
-69,12394068,Elevation D,Elevation,TextNotes,text_note,DOWN HANG WALL,0,-132.47704785840895,WH_Arial_2.0mm_Transparent,12390377|12467521|12467715|12517863
-70,12436594,Elevation C,Elevation,TextNotes,text_note,195mm THKRC SLAB,0,-128.86593968539884,WH_Arial_2.0mm_Transparent,12303468|12303698|12303731|12354726|12354735|12411021
-71,12464287,Elevation B,Elevation,TextNotes,text_note,ROOF OPENING,21.620060989566838,0,WH_Arial_2.0mm_Transparent,
-72,12475079,Elevation C,Elevation,TextNotes,text_note,210mm THKRC SLAB,0,-123.47564431555114,WH_Arial_2.0mm_Transparent,12303562|12303590
+59,12316536,Elevation A,Elevation,TextNotes,text_note,75mm THK ROOF SLAB ,12.538582719851867,0,WH_Arial_2.0mm_Transparent,
+60,12318008,Elevation C,Elevation,TextNotes,text_note,75mm THK ROOF SLAB ,-126.95427536751487,-133.3955552223801,WH_Arial_2.0mm_Transparent,
+61,12320135,Elevation A,Elevation,TextNotes,text_note,130mm THK  RC SLAB ,12.271486959863843,0,WH_Arial_2.0mm_Transparent,
+62,12324738,Elevation B,Elevation,TextNotes,text_note,75mm THK  ROOF SLAB ,12.368175385736528,0,WH_Arial_2.0mm_Transparent,
+63,12324741,Elevation B,Elevation,TextNotes,text_note,210mm THK  RC SLAB ,15.947891923741427,0,WH_Arial_2.0mm_Transparent,
+64,12324817,Elevation B,Elevation,TextNotes,text_note,SLAB OPENING TO CAST OVER ,22.203334674050197,0,WH_Arial_2.0mm_Transparent,
+65,12326129,Elevation C,Elevation,TextNotes,text_note,ROOF OPENING  ,-126.95427536751487,-124.5667839534926,WH_Arial_2.0mm_Transparent,
+66,12331536,Elevation D,Elevation,TextNotes,text_note,75mm THK ROOF SLAB ,0,-137.21780065066625,WH_Arial_2.0mm_Transparent,
+67,12331544,Elevation D,Elevation,TextNotes,text_note,130mm THK  RC SLAB ,0,-138.07192142880731,WH_Arial_2.0mm_Transparent,12299284|12355377|12355387|12355388
+68,12367696,Elevation C,Elevation,TextNotes,text_note,130mm THK RC SLAB ,0,-138.64953397255684,WH_Arial_2.0mm_Transparent,12299284|12354751|12355377|12355387|12355388
+69,12394068,Elevation D,Elevation,TextNotes,text_note,DOWN HANG  WALL ,0,-132.47704785840895,WH_Arial_2.0mm_Transparent,12390377|12467521|12467715|12517863
+70,12436594,Elevation C,Elevation,TextNotes,text_note,195mm THK RC SLAB ,0,-128.86593968539884,WH_Arial_2.0mm_Transparent,12303468|12303698|12303731|12354726|12354735|12411021
+71,12464287,Elevation B,Elevation,TextNotes,text_note,ROOF OPENING ,21.620060989566838,0,WH_Arial_2.0mm_Transparent,
+72,12475079,Elevation C,Elevation,TextNotes,text_note,210mm THK RC SLAB ,0,-123.47564431555114,WH_Arial_2.0mm_Transparent,12303562|12303590

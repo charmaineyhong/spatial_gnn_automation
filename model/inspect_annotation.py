@@ -110,12 +110,14 @@ def is_text_umbrella_row(category, annotation_type, value):
 # ----------------------------
 
 def main():
-    # Find all annotation.csv under BASE_DIR
+    # Find all annotation_with_targets.csv under BASE_DIR, fallback to annotation.csv
     annotation_files = []
     for root, dirs, files in os.walk(BASE_DIR):
-        for f in files:
-            if f.lower() == "annotation.csv":
-                annotation_files.append(os.path.join(root, f))
+        # Prefer annotation_with_targets.csv
+        if "annotation_with_targets.csv" in files:
+            annotation_files.append(os.path.join(root, "annotation_with_targets.csv"))
+        elif "annotation.csv" in files:
+            annotation_files.append(os.path.join(root, "annotation.csv"))
 
     if not annotation_files:
         print(f"No annotation.csv found under {BASE_DIR}")

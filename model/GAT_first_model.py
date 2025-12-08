@@ -205,16 +205,26 @@ def parse_graphml_to_pyg(graphml_path, extracted_base="../Extracted Data"):
         features.extend([x, y, z])
         node_features.append(features)
 
-        # Label: 1 if element has a dimension annotation, else 0
-        try:
-            node_int_id = int(data.get("node_id", node_id))
-        except Exception:
-            node_int_id = None
-
-        if node_int_id is not None and node_int_id in dim_elements:
-            label = 1
+        # Label: Use label_type from GraphML if available, otherwise try to load from annotation file
+        label = 0
+        if "label_type" in data:
+            # Use the label_type directly from GraphML
+            try:
+                label_type_val = int(data["label_type"])
+                # label_type: 0=No Label, 1=Has Dimension
+                label = 1 if label_type_val == 1 else 0
+            except (ValueError, TypeError):
+                label = 0
         else:
-            label = 0
+            # Fallback: check if element has a dimension annotation from external file
+            try:
+                node_int_id = int(data.get("node_id", node_id))
+            except Exception:
+                node_int_id = None
+
+            if node_int_id is not None and node_int_id in dim_elements:
+                label = 1
+        
         node_labels.append(label)
 
     # Edges (undirected)
@@ -498,24 +508,27 @@ if __name__ == "__main__":
     )
     print("Saved best PyTorch weights to:", pth_path)
 
-    # ---- ONNX export ----
-    onnx_path = os.path.join(output_dir, "trained_model.onnx")
-    dummy_x = torch.randn(4, input_dim).to(device)
-    dummy_edge = torch.tensor([[0, 1], [1, 0]], dtype=torch.long).to(device)
-    torch.onnx.export(
-        best_model,
-        (dummy_x, dummy_edge),
-        onnx_path,
-        input_names=["x", "edge_index"],
-        output_names=["logits"],
-        opset_version=16,
-        dynamic_axes={
-            "x": {0: "num_nodes"},
-            "edge_index": {1: "num_edges"},
-            "logits": {0: "num_nodes"},
-        },
-    )
-    print("Saved ONNX model to:", onnx_path)
+    # ---- ONNX export (optional) ----
+    try:
+        onnx_path = os.path.join(output_dir, "trained_model.onnx")
+        dummy_x = torch.randn(4, input_dim).to(device)
+        dummy_edge = torch.tensor([[0, 1], [1, 0]], dtype=torch.long).to(device)
+        torch.onnx.export(
+            best_model,
+            (dummy_x, dummy_edge),
+            onnx_path,
+            input_names=["x", "edge_index"],
+            output_names=["logits"],
+            opset_version=16,
+            dynamic_axes={
+                "x": {0: "num_nodes"},
+                "edge_index": {1: "num_edges"},
+                "logits": {0: "num_nodes"},
+            },
+        )
+        print("Saved ONNX model to:", onnx_path)
+    except Exception as e:
+        print(f"Warning: ONNX export failed (skipping): {e}")
 
     # ---- Overall metrics ----
     all_y_true = np.array(all_y_true)

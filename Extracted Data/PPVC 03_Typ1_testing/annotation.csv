@@ -48,22 +48,22 @@ annotation_id,element_id,view_name,view_type,category,annotation_type,value,x,y,
 47,12384157,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,50.00,0,0,WH_Arial_2.5mm_Transparent,12383172|12381377
 48,12384215,Elevation D,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,375.00,0,0,WH_Arial_2.5mm_Transparent,8738360|12381377
 49,12384408,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,30.00,0,0,WH_Arial_2.5mm_Transparent,12383429|2446354
-50,12320380,Elevation A,Elevation,TextNotes,text_note,DINING ,33.70152706788137,318.8436295837864,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
-51,12320430,Elevation A,Elevation,TextNotes,text_note,75mm THK ROOF SLAB,37.94200041400329,0,WH_Arial_2.0mm_Transparent,
-52,12320453,Elevation A,Elevation,TextNotes,text_note,130mm THK RC SLAB,38.016501643315436,0,WH_Arial_2.0mm_Transparent,
-53,12320464,Elevation C,Elevation,TextNotes,text_note,130mm THK RC SLAB,-35.945598235619855,-65.07567706456011,WH_Arial_2.0mm_Transparent,
-54,12320476,Elevation C,Elevation,TextNotes,text_note,75mm THK ROOF SLAB,-35.945598235619855,-64.09142509605614,WH_Arial_2.0mm_Transparent,
-55,12321367,Elevation C,Elevation,TextNotes,text_note,LIVING ,-354.7892278194063,-57.40806275214277,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
-56,12321389,Elevation C,Elevation,TextNotes,text_note,BALCONY ,-354.7892278194063,-48.97419136795127,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
-57,12321406,Elevation C,Elevation,TextNotes,text_note,DINING ,-354.7892278194063,-70.4001887363947,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
-58,12321590,Elevation D,Elevation,TextNotes,text_note,BALCONY ,425.13136067953235,-48.5844102708303,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
-59,12321600,Elevation D,Elevation,TextNotes,text_note,LIVING ,425.13136067953235,-59.41118192437361,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
-60,12321607,Elevation D,Elevation,TextNotes,text_note,DINING ,425.13136067953235,-73.51879347293004,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
-61,12321678,Elevation B,Elevation,TextNotes,text_note,BALCONY ,35.11009281398768,-440.57053554438636,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
-62,12321685,Elevation B,Elevation,TextNotes,text_note,220~185mm THK RC SLAB,36.434710205469344,0,WH_Arial_2.0mm_Transparent,
-63,12322181,Elevation D,Elevation,TextNotes,text_note,220~185mm THK RC SLAB,0,-48.07137160999022,WH_Arial_2.0mm_Transparent,
-64,12322357,Elevation D,Elevation,TextNotes,text_note,130mm THK RC SLAB,0,-67.33553617668073,WH_Arial_2.0mm_Transparent,
-65,12336232,Elevation C,Elevation,TextNotes,text_note,220~185mm THK RC SLAB,0,-50.15303835669235,WH_Arial_2.0mm_Transparent,
-66,12336898,Elevation B,Elevation,TextNotes,text_note,75mm THK.ROOF SLAB,38.596930681440455,0,WH_Arial_2.0mm_Transparent,
-67,12340175,Elevation D,Elevation,TextNotes,text_note,75mm THK.ROOF SLAB,0,-67.4613384661094,WH_Arial_2.0mm_Transparent,
-68,12375886,Elevation D,Elevation,TextNotes,text_note,MASS CONCRETE TOPPING UP,0,-53.03244806373617,WH_Arial_2.0mm_Transparent,
+50,12320380,Elevation A,Elevation,TextNotes,text_note,DINING  ,33.70152706788137,318.8436295837864,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
+51,12320430,Elevation A,Elevation,TextNotes,text_note,75mm THK ROOF SLAB ,37.94200041400329,0,WH_Arial_2.0mm_Transparent,
+52,12320453,Elevation A,Elevation,TextNotes,text_note,130mm THK  RC SLAB ,38.016501643315436,0,WH_Arial_2.0mm_Transparent,
+53,12320464,Elevation C,Elevation,TextNotes,text_note,130mm THK  RC SLAB ,-35.945598235619855,-65.07567706456011,WH_Arial_2.0mm_Transparent,
+54,12320476,Elevation C,Elevation,TextNotes,text_note,75mm THK  ROOF SLAB ,-35.945598235619855,-64.09142509605614,WH_Arial_2.0mm_Transparent,
+55,12321367,Elevation C,Elevation,TextNotes,text_note,LIVING  ,-354.7892278194063,-57.40806275214277,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
+56,12321389,Elevation C,Elevation,TextNotes,text_note,BALCONY  ,-354.7892278194063,-48.97419136795127,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
+57,12321406,Elevation C,Elevation,TextNotes,text_note,DINING  ,-354.7892278194063,-70.4001887363947,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
+58,12321590,Elevation D,Elevation,TextNotes,text_note,BALCONY  ,425.13136067953235,-48.5844102708303,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
+59,12321600,Elevation D,Elevation,TextNotes,text_note,LIVING  ,425.13136067953235,-59.41118192437361,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
+60,12321607,Elevation D,Elevation,TextNotes,text_note,DINING  ,425.13136067953235,-73.51879347293004,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
+61,12321678,Elevation B,Elevation,TextNotes,text_note,BALCONY  ,35.11009281398768,-440.57053554438636,WH_Arial_3mm_Bold_Transparent_Dark Purple_WF-1,
+62,12321685,Elevation B,Elevation,TextNotes,text_note,220~185mm THK  RC SLAB ,36.434710205469344,0,WH_Arial_2.0mm_Transparent,
+63,12322181,Elevation D,Elevation,TextNotes,text_note,220~185mm THK RC SLAB ,0,-48.07137160999022,WH_Arial_2.0mm_Transparent,
+64,12322357,Elevation D,Elevation,TextNotes,text_note,130mm THK RC SLAB ,0,-67.33553617668073,WH_Arial_2.0mm_Transparent,
+65,12336232,Elevation C,Elevation,TextNotes,text_note,220~185mm THK  RC SLAB ,0,-50.15303835669235,WH_Arial_2.0mm_Transparent,
+66,12336898,Elevation B,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB ,38.596930681440455,0,WH_Arial_2.0mm_Transparent,
+67,12340175,Elevation D,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB ,0,-67.4613384661094,WH_Arial_2.0mm_Transparent,
+68,12375886,Elevation D,Elevation,TextNotes,text_note,MASS CONCRETE TOPPING UP ,0,-53.03244806373617,WH_Arial_2.0mm_Transparent,

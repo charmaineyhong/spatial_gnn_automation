@@ -46,11 +46,11 @@ NUM_NEAREST_ELEMENTS = 3  # Increased to label more elements per text
 # ================================
 PPVC_MAPPINGS = {
     "PPVC_01": {
-        "graphml": "PPVC_01.graphml",
+        "graphml": "1_graph.graphml",
         "folders": ["PPVC 01, 20_Typ"]
     },
     "PPVC_02": {
-        "graphml": "PPVC_02.graphml",
+        "graphml": "2_graph.graphml",
         "folders": ["PPVC 02_Typ 1"]
     },
     "PPVC_03": {
@@ -58,24 +58,108 @@ PPVC_MAPPINGS = {
         "folders": ["PPVC 03_Typ1_testing"]
     },
     "PPVC_04": {
-        "graphml": "PPVC_04.graphml",
+        "graphml": "4_graph.graphml",
         "folders": ["PPVC 04_Typ 1"]
     },
     "PPVC_05": {
-        "graphml": "PPVC_05.graphml",
+        "graphml": "5_graph.graphml",
         "folders": ["PPVC 05, 16_Typ"]
     },
     "PPVC_06": {
-        "graphml": "PPVC_06.graphml",
+        "graphml": "6_graph.graphml",
         "folders": ["PPVC 06_Typ"]
     },
+    "PPVC_07": {
+        "graphml": "7_graph.graphml",
+        "folders": ["PPVC 07_Typ"]
+    },
+    "PPVC_08": {
+        "graphml": "8_graph.graphml",
+        "folders": ["PPVC 08_Typ"]
+    },
+    "PPVC_09": {
+        "graphml": "9_graph.graphml",
+        "folders": ["PPVC 09_Typ"]
+    },
+    "PPVC_10": {
+        "graphml": "10_graph.graphml",
+        "folders": ["PPVC 10_Typ"]
+    },
+    "PPVC_11": {
+        "graphml": "11_graph.graphml",
+        "folders": ["PPVC 11_Typ"]
+    },
+    "PPVC_12": {
+        "graphml": "12_graph.graphml",
+        "folders": ["PPVC 12_Typ"]
+    },
+    "PPVC_13": {
+        "graphml": "13_graph.graphml",
+        "folders": ["PPVC 13_Typ"]
+    },
+    "PPVC_14": {
+        "graphml": "14_graph.graphml",
+        "folders": ["PPVC 14_Typ"]
+    },
+    "PPVC_15": {
+        "graphml": "15_graph.graphml",
+        "folders": ["PPVC 15_Typ"]
+    },
+    "PPVC_17": {
+        "graphml": "17_graph.graphml",
+        "folders": ["PPVC 17_Typ"]
+    },
+    "PPVC_18": {
+        "graphml": "18_graph.graphml",
+        "folders": ["PPVC 18_Typ"]
+    },
+    "PPVC_19": {
+        "graphml": "19_graph.graphml",
+        "folders": ["PPVC 19_Typ"]
+    },
+    "PPVC_20": {
+        "graphml": "20_graph.graphml",
+        "folders": ["PPVC 20_Typ"]
+    },
     "PPVC_21": {
-        "graphml": "PPVC_21.graphml",
+        "graphml": None,  # No 21_graph.graphml found
         "folders": ["PPVC 21,31_Typ"]
     },
     "PPVC_22": {
-        "graphml": "PPVC_22.graphml",
+        "graphml": "22_graph.graphml",
         "folders": ["PPVC 22_Typ"]
+    },
+    "PPVC_23": {
+        "graphml": "23_graph.graphml",
+        "folders": ["PPVC 23_Typ"]
+    },
+    "PPVC_24": {
+        "graphml": "24_graph.graphml",
+        "folders": ["PPVC 24_Typ"]
+    },
+    "PPVC_25": {
+        "graphml": "25_graph.graphml",
+        "folders": ["PPVC 25_Typ"]
+    },
+    "PPVC_26": {
+        "graphml": "26_graph.graphml",
+        "folders": ["PPVC 26_Typ"]
+    },
+    "PPVC_27": {
+        "graphml": "27_graph.graphml",
+        "folders": ["PPVC 27_Typ"]
+    },
+    "PPVC_28": {
+        "graphml": "28_graph.graphml",
+        "folders": ["PPVC 28_Typ"]
+    },
+    "PPVC_29": {
+        "graphml": "29_graph.graphml",
+        "folders": ["PPVC 29_Typ"]
+    },
+    "PPVC_30": {
+        "graphml": "30_graph.graphml",
+        "folders": ["PPVC 30_Typ"]
     },
 }
 
@@ -223,41 +307,12 @@ def process_ppvc(ppvc_key, ppvc_config):
         #   Line 2: ,x,y,extra,target_element_ids\n
         # We need to merge these continuation lines
         
-        rows = []
-        with open(annotation_csv, 'r', encoding='utf-8') as f:
-            header = f.readline().strip()
-            rows.append(header.split(','))
-            
-            buffer = []
-            for line in f:
-                line = line.rstrip('\n\r')
-                parts = [p.strip() for p in line.split(',')]
-                
-                # If line starts with empty string (continuation line)
-                if parts[0] == '' and buffer:
-                    # Merge: buffer has first 6 cols, parts has last 4 (skip first empty)
-                    # buffer: [id, view_name, view_type, category, annotation_type, value]
-                    # parts:  ['', x, y, extra, target_element_ids] -> take [1:]
-                    merged = buffer + parts[1:]
-                    rows.append(merged)
-                    buffer = []
-                else:
-                    # Check if this is a complete row (has all 10 fields)
-                    if len(parts) >= 10:
-                        rows.append(parts[:10])
-                    else:
-                        # Incomplete row, might continue on next line
-                        buffer = parts
-            
-            # If there's a leftover buffer, add it (shouldn't happen in well-formed files)
-            if buffer:
-                # Pad with empty strings to reach 10 columns
-                while len(buffer) < 10:
-                    buffer.append('')
-                rows.append(buffer[:10])
-        
-        # Convert to DataFrame
-        df = pd.DataFrame(rows[1:], columns=rows[0])
+        # Read CSV with pandas - much more robust
+        try:
+            df = pd.read_csv(annotation_csv, on_bad_lines='skip', engine='python')
+        except Exception as e:
+            print(f"  [ERROR] Could not read {annotation_csv}: {e}")
+            return
         
         # Clean up the value column - remove embedded newlines/carriage returns
         if 'value' in df.columns:

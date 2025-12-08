@@ -50,17 +50,17 @@ annotation_id,element_id,view_name,view_type,category,annotation_type,value,x,y,
 49,12415235,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0,0,WH_Arial_2.5mm_Transparent,12297207|12403267
 50,12420261,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0,0,WH_Arial_2.5mm_Transparent,12420225|2446354
 51,12420403,Elevation A,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0,0,WH_Arial_2.5mm_Transparent,12297207|12420225
-52,12321379,Elevation B,Elevation,TextNotes,text_note,135mm THK. RC SLAB,87.54669114250746,0,WH_Arial_2.0mm_Transparent,
-53,12321387,Elevation B,Elevation,TextNotes,text_note,195mm THK. RC SLAB,90.03360460083849,0,WH_Arial_2.0mm_Transparent,
-54,12324967,Elevation A,Elevation,TextNotes,text_note,130mm THK. RC SLAB,86.95554996577323,0,WH_Arial_2.0mm_Transparent,
-55,12324975,Elevation A,Elevation,TextNotes,text_note,160mm THK. RC SLAB,90.94110057858558,0,WH_Arial_2.0mm_Transparent,
-56,12326331,Elevation C,Elevation,TextNotes,text_note,195mm THK. RC SLAB,0,-71.61149050718164,WH_Arial_2.0mm_Transparent,
-57,12326339,Elevation C,Elevation,TextNotes,text_note,160mm THK. RC SLAB,0,-75.494647480013,WH_Arial_2.0mm_Transparent,
-58,12328074,Elevation D,Elevation,TextNotes,text_note,135mm THK. RC SLAB,0,-71.75541147988953,WH_Arial_2.0mm_Transparent,
-59,12334308,Elevation B,Elevation,TextNotes,text_note,75mm THK.ROOF SLAB,89.4237901720616,0,WH_Arial_2.0mm_Transparent,
-60,12352876,Elevation D,Elevation,TextNotes,text_note,DOWN HANG WALL,0,-72.8344536773482,WH_Arial_2.0mm_Transparent,
-61,12405054,Elevation C,Elevation,TextNotes,text_note,M&E WALL OPENING,0,-76.21457494005575,WH_Arial_2.0mm_Transparent,
-62,12405423,Elevation B,Elevation,TextNotes,text_note,M&E WALL OPENING,88.10224281950956,0,WH_Arial_2.0mm_Transparent,
-63,12405774,Elevation D,Elevation,TextNotes,text_note,M&E WALL OPENING,0,-68.72794627726043,WH_Arial_2.0mm_Transparent,
-64,12420625,Elevation C,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB,0,-68.19668106532441,WH_Arial_2.0mm_Transparent,
-65,12422088,Elevation A,Elevation,TextNotes,text_note,400Wx500Hx60DM&E RECESS @ INT WALL SURFACE,94.5297682735679,0,WH_Arial_2.0mm_Transparent,
+52,12321379,Elevation B,Elevation,TextNotes,text_note,135mm THK. RC SLAB ,87.54669114250746,0,WH_Arial_2.0mm_Transparent,
+53,12321387,Elevation B,Elevation,TextNotes,text_note,195mm THK. RC SLAB ,90.03360460083849,0,WH_Arial_2.0mm_Transparent,
+54,12324967,Elevation A,Elevation,TextNotes,text_note,130mm THK. RC SLAB ,86.95554996577323,0,WH_Arial_2.0mm_Transparent,
+55,12324975,Elevation A,Elevation,TextNotes,text_note,160mm THK. RC SLAB ,90.94110057858558,0,WH_Arial_2.0mm_Transparent,
+56,12326331,Elevation C,Elevation,TextNotes,text_note,195mm THK. RC SLAB ,0,-71.61149050718164,WH_Arial_2.0mm_Transparent,
+57,12326339,Elevation C,Elevation,TextNotes,text_note,160mm THK. RC SLAB ,0,-75.494647480013,WH_Arial_2.0mm_Transparent,
+58,12328074,Elevation D,Elevation,TextNotes,text_note,135mm THK.  RC SLAB ,0,-71.75541147988953,WH_Arial_2.0mm_Transparent,
+59,12334308,Elevation B,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB ,89.4237901720616,0,WH_Arial_2.0mm_Transparent,
+60,12352876,Elevation D,Elevation,TextNotes,text_note,DOWN HANG WALL ,0,-72.8344536773482,WH_Arial_2.0mm_Transparent,
+61,12405054,Elevation C,Elevation,TextNotes,text_note,M&E WALL OPENING ,0,-76.21457494005575,WH_Arial_2.0mm_Transparent,
+62,12405423,Elevation B,Elevation,TextNotes,text_note,M&E WALL OPENING ,88.10224281950956,0,WH_Arial_2.0mm_Transparent,
+63,12405774,Elevation D,Elevation,TextNotes,text_note,M&E WALL OPENING ,0,-68.72794627726043,WH_Arial_2.0mm_Transparent,
+64,12420625,Elevation C,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB ,0,-68.19668106532441,WH_Arial_2.0mm_Transparent,
+65,12422088,Elevation A,Elevation,TextNotes,text_note,400Wx500Hx60D M&E RECESS @ INT WALL SURFACE ,94.5297682735679,0,WH_Arial_2.0mm_Transparent,

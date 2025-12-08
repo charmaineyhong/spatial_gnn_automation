@@ -58,21 +58,21 @@ annotation_id,element_id,view_name,view_type,category,annotation_type,value,x,y,
 57,12015337,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0,0,WH_Arial_2.5mm_Transparent,12014855|11840014
 58,12015349,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,300.00,0,0,WH_Arial_2.5mm_Transparent,
 59,12015356,Elevation B,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0,0,WH_Arial_2.5mm_Transparent,2446354
-60,11811376,Elevation C,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB,0,-138.47891611013924,WH_Arial_2.0mm_Transparent,
-61,11811399,Elevation C,Elevation,TextNotes,text_note,VOID,0,-151.95122793411474,WH_Arial_2.0mm_Transparent,
-62,11818200,Elevation D,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB,0,-139.9181659368977,WH_Arial_2.0mm_Transparent,
-63,11818207,Elevation A,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB,73.30463908761976,0,WH_Arial_2.0mm_Transparent,
-64,11818213,Elevation B,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB,76.14658122631411,-9.706013770482969E-12,WH_Arial_2.0mm_Transparent,
-65,11825053,Elevation D,Elevation,TextNotes,text_note,VOID,0,-150.6464380897978,WH_Arial_2.0mm_Transparent,
-66,11831388,Elevation D,Elevation,TextNotes,text_note,130mm THK. RC SLAB,0,-141.7550009354187,WH_Arial_2.0mm_Transparent,
-67,11831402,Elevation C,Elevation,TextNotes,text_note,130mm THK. RC SLAB,149.95785575329012,-138.38175771576377,WH_Arial_2.0mm_Transparent,
-68,11868099,Elevation B,Elevation,TextNotes,text_note,195mm THK. RC SLAB,76.43193836814933,-56.286965602880855,WH_Arial_2.0mm_Transparent,
-69,11886971,Elevation C,Elevation,TextNotes,text_note,160mm THK. RC SLAB,149.95785575329012,-131.84580344445462,WH_Arial_2.0mm_Transparent,
-70,11887974,Elevation B,Elevation,TextNotes,text_note,ROOF OPENING,76.14658122631411,-9.706013770482969E-12,WH_Arial_2.0mm_Transparent,
-71,11892092,Elevation B,Elevation,TextNotes,text_note,SLAB OPENING TO CAST OVER,78.75722578400789,-56.2869656028811,WH_Arial_2.0mm_Transparent,
-72,11893333,Elevation C,Elevation,TextNotes,text_note,RC KERB REFERS TO ARCHI. WSO,0,-153.38819738337304,WH_Arial_2.0mm_Transparent,
-73,11906136,Elevation C,Elevation,TextNotes,text_note,ROOF OPENING,0,-130.79670176652672,WH_Arial_2.0mm_Transparent,
-74,11907530,Elevation D,Elevation,TextNotes,text_note,195mm THK. RC SLAB,0,-128.48795635024243,WH_Arial_2.0mm_Transparent,
-75,11918538,Elevation B,Elevation,TextNotes,text_note,160mm THK. RC SLAB,76.69627638698238,-56.28696560288088,WH_Arial_2.0mm_Transparent,
-76,12009025,Elevation B,Elevation,TextNotes,text_note,40MM DEPTH RECESS,70.2255067522243,-8.959971581717162E-12,WH_Arial_2.0mm_Transparent,
-77,12015252,Elevation B,Elevation,TextNotes,text_note,60MM DEPTH RECESS,70.2255067522243,-8.959971581717162E-12,WH_Arial_2.0mm_Transparent,
+60,11811376,Elevation C,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB ,0,-138.47891611013924,WH_Arial_2.0mm_Transparent,
+61,11811399,Elevation C,Elevation,TextNotes,text_note,VOID ,0,-151.95122793411474,WH_Arial_2.0mm_Transparent,
+62,11818200,Elevation D,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB ,0,-139.9181659368977,WH_Arial_2.0mm_Transparent,
+63,11818207,Elevation A,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB ,73.30463908761976,0,WH_Arial_2.0mm_Transparent,
+64,11818213,Elevation B,Elevation,TextNotes,text_note,75mm THK. ROOF SLAB ,76.14658122631411,-9.706013770482969E-12,WH_Arial_2.0mm_Transparent,
+65,11825053,Elevation D,Elevation,TextNotes,text_note,VOID ,0,-150.6464380897978,WH_Arial_2.0mm_Transparent,
+66,11831388,Elevation D,Elevation,TextNotes,text_note,130mm THK. RC SLAB ,0,-141.7550009354187,WH_Arial_2.0mm_Transparent,
+67,11831402,Elevation C,Elevation,TextNotes,text_note,130mm THK. RC SLAB ,149.95785575329012,-138.38175771576377,WH_Arial_2.0mm_Transparent,
+68,11868099,Elevation B,Elevation,TextNotes,text_note,195mm THK. RC SLAB ,76.43193836814933,-56.286965602880855,WH_Arial_2.0mm_Transparent,
+69,11886971,Elevation C,Elevation,TextNotes,text_note,160mm THK. RC SLAB ,149.95785575329012,-131.84580344445462,WH_Arial_2.0mm_Transparent,
+70,11887974,Elevation B,Elevation,TextNotes,text_note,ROOF OPENING ,76.14658122631411,-9.706013770482969E-12,WH_Arial_2.0mm_Transparent,
+71,11892092,Elevation B,Elevation,TextNotes,text_note,SLAB OPENING  TO CAST OVER ,78.75722578400789,-56.2869656028811,WH_Arial_2.0mm_Transparent,
+72,11893333,Elevation C,Elevation,TextNotes,text_note,RC KERB REFERS TO ARCHI. WSO ,0,-153.38819738337304,WH_Arial_2.0mm_Transparent,
+73,11906136,Elevation C,Elevation,TextNotes,text_note,ROOF OPENING ,0,-130.79670176652672,WH_Arial_2.0mm_Transparent,
+74,11907530,Elevation D,Elevation,TextNotes,text_note,195mm THK. RC SLAB ,0,-128.48795635024243,WH_Arial_2.0mm_Transparent,
+75,11918538,Elevation B,Elevation,TextNotes,text_note,160mm THK. RC SLAB ,76.69627638698238,-56.28696560288088,WH_Arial_2.0mm_Transparent,
+76,12009025,Elevation B,Elevation,TextNotes,text_note,40MM DEPTH RECESS ,70.2255067522243,-8.959971581717162E-12,WH_Arial_2.0mm_Transparent,
+77,12015252,Elevation B,Elevation,TextNotes,text_note,60MM DEPTH RECESS ,70.2255067522243,-8.959971581717162E-12,WH_Arial_2.0mm_Transparent,

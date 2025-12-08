@@ -48,11 +48,11 @@ annotation_id,element_id,view_name,view_type,category,annotation_type,value,x,y,
 47,12370904,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,60.00,0,0,WH_Arial_2.5mm_Transparent,12323302|12355382
 48,12370911,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,,0,0,WH_Arial_2.5mm_Transparent,2446354|12355382
 49,12370923,Elevation C,Elevation,Dimensions,WH_Arial_2.5mm_Transparent,1050.00,0,0,WH_Arial_2.5mm_Transparent,2446354
-50,12314832,Elevation A,Elevation,TextNotes,text_note,140~130mm THK RC SLAB,95.82596878788584,0,WH_Arial_2.0mm_Transparent,
-51,12315750,Elevation C,Elevation,TextNotes,text_note,DOWN HANG WALL,-6.447780216261759E-13,-85.17641185621267,WH_Arial_2.0mm_Transparent,
-52,12315775,Elevation C,Elevation,TextNotes,text_note,140~130mm THK RC SLAB,-7.379535924104448E-13,-92.51467859358281,WH_Arial_2.0mm_Transparent,
-53,12315783,Elevation C,Elevation,TextNotes,text_note,80mm THK RC SLAB(POUR STRIP),-6.184882995892503E-13,-79.91957598602806,WH_Arial_2.0mm_Transparent,
-54,12316276,Elevation B,Elevation,TextNotes,text_note,80mm THK. RC SLAB(POUR STRIP),100.046905865851,0,WH_Arial_2.0mm_Transparent,
-55,12316577,Elevation D,Elevation,TextNotes,text_note,75mm THK RC SLAB(POUR STRIP),-4.833881731688349E-13,-77.45617009904787,WH_Arial_2.5mm_Transparent_WF-1,
-56,12316583,Elevation D,Elevation,TextNotes,text_note,140~130mm THK RC SLAB,-5.670498102219545E-13,-90.09207740580021,WH_Arial_2.5mm_Transparent_WF-1,
-57,12348507,Elevation B,Elevation,TextNotes,text_note,75mm THK. RC SLAB(POUR STRIP),95.78181400233392,0,WH_Arial_2.0mm_Transparent,
+50,12314832,Elevation A,Elevation,TextNotes,text_note,140~130mm THK RC SLAB ,95.82596878788584,0,WH_Arial_2.0mm_Transparent,
+51,12315750,Elevation C,Elevation,TextNotes,text_note,DOWN HANG  WALL ,-6.447780216261759E-13,-85.17641185621267,WH_Arial_2.0mm_Transparent,
+52,12315775,Elevation C,Elevation,TextNotes,text_note,140~130mm THK  RC SLAB ,-7.379535924104448E-13,-92.51467859358281,WH_Arial_2.0mm_Transparent,
+53,12315783,Elevation C,Elevation,TextNotes,text_note,80mm THK  RC SLAB(POUR STRIP) ,-6.184882995892503E-13,-79.91957598602806,WH_Arial_2.0mm_Transparent,
+54,12316276,Elevation B,Elevation,TextNotes,text_note,80mm THK.  RC SLAB(POUR STRIP) ,100.046905865851,0,WH_Arial_2.0mm_Transparent,
+55,12316577,Elevation D,Elevation,TextNotes,text_note,75mm THK  RC SLAB(POUR STRIP) ,-4.833881731688349E-13,-77.45617009904787,WH_Arial_2.5mm_Transparent_WF-1,
+56,12316583,Elevation D,Elevation,TextNotes,text_note,140~130mm THK  RC SLAB ,-5.670498102219545E-13,-90.09207740580021,WH_Arial_2.5mm_Transparent_WF-1,
+57,12348507,Elevation B,Elevation,TextNotes,text_note,75mm THK.  RC SLAB(POUR STRIP) ,95.78181400233392,0,WH_Arial_2.0mm_Transparent,
